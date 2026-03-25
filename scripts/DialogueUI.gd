@@ -62,6 +62,14 @@ func load_episode_from_json(path: String) -> Dictionary:
 	return json.data
 
 func _on_node_changed(node: Dictionary) -> void:
+	# Update background
+	var bg_id = node.get("backgroundId", "")
+	if bg_id != "":
+		load_background(bg_id)
+	
+	# Update characters on screen
+	update_characters(node.get("characters", []))
+	
 	# Update speaker
 	var speaker_id = node.get("speakerId", "")
 	if speaker_id == "":
@@ -81,13 +89,87 @@ func _on_node_changed(node: Dictionary) -> void:
 		continue_button.visible = true
 		choices_panel.visible = false
 
+func load_background(bg_id: String) -> void:
+	# Map background IDs to image paths
+	var bg_paths: Dictionary = {
+		"villa_exterior": "res://assets/Art/Backgrounds/villa_exterior.png",
+		"villa_entrance": "res://assets/Art/Backgrounds/villa_exterior.png",
+		"villa_pool": "res://assets/Art/Backgrounds/Poolside_bg.png",
+		"villa_garden": "res://assets/Art/Backgrounds/villa_garden.png",
+		"villa_gym": "res://assets/Art/Backgrounds/villa_gym.png",
+		"villa_firepit": "res://assets/Art/Backgrounds/villa_firepit.png",
+		"villa_night": "res://assets/Art/Backgrounds/villa_night.png",
+		"confessional_booth": "res://assets/Art/Backgrounds/confessional_booth.png"
+	}
+	
+	var path = bg_paths.get(bg_id, "")
+	if path != "" and ResourceLoader.exists(path):
+		background.texture = load(path)
+
+@onready var character_container: Control = get_node("../CharacterContainer")
+var active_character_sprites: Dictionary = {}
+
+# Character sprite paths
+var character_sprites: Dictionary = {
+	"strawberry": "res://assets/Art/Characters/strawberry_removebg.png",
+	"banana": "res://assets/Art/Characters/Banana_rbg.png",
+	"grape": "res://assets/Art/Characters/Grape_rbg.png",
+	"orange": "res://assets/Art/Characters/Orange_rbg.png",
+	"watermelon": "res://assets/Art/Characters/watermelon_rbg.png",
+	"mango": "res://assets/Art/Characters/Mango_rbg.png"
+}
+
+func update_characters(characters: Array) -> void:
+	# Clear existing character sprites
+	for child in character_container.get_children():
+		child.queue_free()
+	active_character_sprites.clear()
+	
+	# Add new character sprites
+	for char_data in characters:
+		var char_id = char_data.get("characterId", "")
+		var char_position = char_data.get("position", "Center")
+		var is_highlighted = char_data.get("isHighlighted", false)
+		
+		if character_sprites.has(char_id):
+			var sprite = TextureRect.new()
+			sprite.texture = load(character_sprites[char_id])
+			sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			
+			# Position based on Left/Center/Right
+			sprite.anchor_top = 0.1
+			sprite.anchor_bottom = 0.85
+			match char_position:
+				"Left":
+					sprite.anchor_left = 0.0
+					sprite.anchor_right = 0.4
+				"Right":
+					sprite.anchor_left = 0.6
+					sprite.anchor_right = 1.0
+				_: # Center
+					sprite.anchor_left = 0.25
+					sprite.anchor_right = 0.75
+			
+			sprite.offset_left = 0
+			sprite.offset_right = 0
+			sprite.offset_top = 0
+			sprite.offset_bottom = 0
+			
+			# Dim non-highlighted characters
+			if not is_highlighted:
+				sprite.modulate = Color(0.6, 0.6, 0.6, 1.0)
+			
+			character_container.add_child(sprite)
+			active_character_sprites[char_id] = sprite
+
 func start_typewriter(text: String) -> void:
 	full_text = text
 	dialogue_text.text = ""
 	visible_chars = 0
 	is_typing = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_typing:
 		visible_chars += 1
 		if visible_chars >= full_text.length():
