@@ -73,14 +73,19 @@ shadow_size = 6
 shadow_offset = Vector2(0, 2)
 
 [sub_resource type="StyleBoxFlat" id="panel_style"]
-bg_color = Color(0, 0, 0, 0.75)
-border_width_left = 0
-border_width_top = 3
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color(1, 1, 1, 0.2)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
+bg_color = Color(0.95, 0.98, 1.0, 0.95)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0, 0.75, 0.85, 1.0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+corner_radius_bottom_right = 20
+shadow_color = Color(0, 0, 0, 0.15)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
 
 [resource]
 Button/styles/normal = SubResource("button_normal")

@@ -3,9 +3,9 @@ extends Control
 @onready var dialogue_panel: Panel = $DialoguePanel
 @onready var speaker_name: Label = $DialoguePanel/MarginContainer/VBox/SpeakerName
 @onready var dialogue_text: RichTextLabel = $DialoguePanel/MarginContainer/VBox/DialogueText
-@onready var continue_button: Button = $DialoguePanel/MarginContainer/VBox/ContinueButton
+@onready var continue_arrow: Label = $DialoguePanel/MarginContainer/VBox/ContinueArrow
 @onready var choices_panel: VBoxContainer = $ChoicesPanel
-@onready var heart_count: Label = $HeartsDisplay/HeartCount
+@onready var heart_count: Label = $TopBar/HeartsDisplay/GemsBg/HBox/HeartCount
 @onready var background: TextureRect = get_node("../Background")
 @onready var story_manager: Node = get_node("../StoryManager")
 
@@ -35,14 +35,26 @@ func _ready() -> void:
 	story_manager.node_changed.connect(_on_node_changed)
 	story_manager.choices_presented.connect(_on_choices_presented)
 	story_manager.episode_ended.connect(_on_episode_ended)
-	continue_button.pressed.connect(_on_continue_pressed)
 	GameManager.hearts_changed.connect(_on_hearts_changed)
 	
 	# Update hearts display
 	heart_count.text = str(GameManager.hearts)
 	
+	# Animate continue arrow
+	_animate_continue_arrow()
+	
 	# Load episode on start
 	call_deferred("_load_episode")
+
+func _animate_continue_arrow() -> void:
+	var tween = create_tween().set_loops()
+	tween.tween_property(continue_arrow, "modulate:a", 0.3, 0.6)
+	tween.tween_property(continue_arrow, "modulate:a", 1.0, 0.6)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if not choices_panel.visible:
+			_on_continue_pressed()
 
 func _load_episode() -> void:
 	var episode = load_episode_from_json("res://resources/episodes/Episode1.json")
@@ -88,9 +100,9 @@ func _on_node_changed(node: Dictionary) -> void:
 	# Show/hide continue button based on node type
 	var node_type = node.get("nodeType", "Dialogue")
 	if node_type == "Choice":
-		continue_button.visible = false
+		continue_arrow.visible = false
 	else:
-		continue_button.visible = true
+		continue_arrow.visible = true
 		choices_panel.visible = false
 
 func load_background(bg_id: String) -> void:
@@ -167,19 +179,19 @@ func update_characters(characters: Array) -> void:
 			sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			
-			# Position based on Left/Center/Right
-			sprite.anchor_top = 0.1
-			sprite.anchor_bottom = 0.85
+			# Position based on Left/Center/Right - characters at bottom
+			sprite.anchor_top = 0.35
+			sprite.anchor_bottom = 1.05
 			match char_position:
 				"Left":
-					sprite.anchor_left = 0.0
-					sprite.anchor_right = 0.4
+					sprite.anchor_left = -0.15
+					sprite.anchor_right = 0.45
 				"Right":
-					sprite.anchor_left = 0.6
-					sprite.anchor_right = 1.0
+					sprite.anchor_left = 0.55
+					sprite.anchor_right = 1.15
 				_: # Center
-					sprite.anchor_left = 0.25
-					sprite.anchor_right = 0.75
+					sprite.anchor_left = 0.1
+					sprite.anchor_right = 0.9
 			
 			sprite.offset_left = 0
 			sprite.offset_right = 0
@@ -217,7 +229,7 @@ func _on_continue_pressed() -> void:
 		story_manager.continue_story()
 
 func _on_choices_presented(choices: Array) -> void:
-	continue_button.visible = false
+	continue_arrow.visible = false
 	choices_panel.visible = true
 	
 	# Clear old choices
@@ -277,8 +289,8 @@ func _on_choice_selected(choice: Dictionary) -> void:
 
 func _on_episode_ended() -> void:
 	dialogue_text.text = "[center]🌴 Episode Complete! 🌴[/center]"
-	continue_button.text = "Next Episode →"
-	continue_button.visible = true
+	continue_arrow.text = "Next Episode →"
+	continue_arrow.visible = true
 
 func _on_hearts_changed(new_amount: int) -> void:
 	heart_count.text = str(new_amount)
