@@ -27,6 +27,10 @@ var visible_chars: int = 0
 var is_typing: bool = false
 var type_speed: float = 0.03
 
+# Transitions
+var current_bg_id: String = ""
+var transition_tween: Tween
+
 func _ready() -> void:
 	story_manager.node_changed.connect(_on_node_changed)
 	story_manager.choices_presented.connect(_on_choices_presented)
@@ -90,6 +94,11 @@ func _on_node_changed(node: Dictionary) -> void:
 		choices_panel.visible = false
 
 func load_background(bg_id: String) -> void:
+	# Skip if same background
+	if bg_id == current_bg_id:
+		return
+	current_bg_id = bg_id
+	
 	# Map background IDs to image paths
 	var bg_paths: Dictionary = {
 		"villa_exterior": "res://assets/Art/Backgrounds/villa_exterior.png",
@@ -104,12 +113,19 @@ func load_background(bg_id: String) -> void:
 	
 	var path = bg_paths.get(bg_id, "")
 	if path != "" and ResourceLoader.exists(path):
-		background.texture = load(path)
+		var new_texture = load(path)
+		# Fade transition
+		if transition_tween:
+			transition_tween.kill()
+		transition_tween = create_tween()
+		transition_tween.tween_property(background, "modulate:a", 0.0, 0.2)
+		transition_tween.tween_callback(func(): background.texture = new_texture)
+		transition_tween.tween_property(background, "modulate:a", 1.0, 0.3)
 
 @onready var character_container: Control = get_node("../CharacterContainer")
 var active_character_sprites: Dictionary = {}
 
-# Character sprite paths
+# Character sprite paths (base)
 var character_sprites: Dictionary = {
 	"strawberry": "res://assets/Art/Characters/strawberry_removebg.png",
 	"banana": "res://assets/Art/Characters/Banana_rbg.png",
@@ -117,6 +133,13 @@ var character_sprites: Dictionary = {
 	"orange": "res://assets/Art/Characters/Orange_rbg.png",
 	"watermelon": "res://assets/Art/Characters/watermelon_rbg.png",
 	"mango": "res://assets/Art/Characters/Mango_rbg.png"
+}
+
+# Character expressions (override base when emotion specified)
+var character_expressions: Dictionary = {
+	"strawberry_sad": "res://assets/Art/Characters/expressions/strawberry_sad.png",
+	"strawberry_shocked": "res://assets/Art/Characters/expressions/strawberry_shocked.png",
+	"banana_angry": "res://assets/Art/Characters/expressions/banana_angry.png"
 }
 
 func update_characters(characters: Array) -> void:
@@ -130,10 +153,17 @@ func update_characters(characters: Array) -> void:
 		var char_id = char_data.get("characterId", "")
 		var char_position = char_data.get("position", "Center")
 		var is_highlighted = char_data.get("isHighlighted", false)
+		var emotion = char_data.get("emotion", "neutral")
 		
 		if character_sprites.has(char_id):
 			var sprite = TextureRect.new()
-			sprite.texture = load(character_sprites[char_id])
+			
+			# Check for expression variant first
+			var expression_key = char_id + "_" + emotion
+			if character_expressions.has(expression_key) and ResourceLoader.exists(character_expressions[expression_key]):
+				sprite.texture = load(character_expressions[expression_key])
+			else:
+				sprite.texture = load(character_sprites[char_id])
 			sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			
@@ -194,22 +224,52 @@ func _on_choices_presented(choices: Array) -> void:
 	for child in choices_panel.get_children():
 		child.queue_free()
 	
-	# Create choice buttons
+	# Create choice buttons with staggered animation
+	var delay = 0.0
 	for choice in choices:
 		var btn = Button.new()
 		var text = choice.get("choiceText", "")
-		if choice.get("isPremium", false) and choice.get("heartsCost", 0) > 0:
+		var is_premium = choice.get("isPremium", false)
+		
+		if is_premium and choice.get("heartsCost", 0) > 0:
 			text += " 💎" + str(choice.heartsCost)
 		btn.text = text
-		btn.custom_minimum_size = Vector2(0, 60)
+		btn.custom_minimum_size = Vector2(0, 70)
+		
+		# Premium button styling
+		if is_premium:
+			var premium_style = StyleBoxFlat.new()
+			premium_style.bg_color = Color(0.6, 0.2, 0.7, 0.9)
+			premium_style.corner_radius_top_left = 16
+			premium_style.corner_radius_top_right = 16
+			premium_style.corner_radius_bottom_left = 16
+			premium_style.corner_radius_bottom_right = 16
+			premium_style.border_width_top = 2
+			premium_style.border_width_bottom = 2
+			premium_style.border_width_left = 2
+			premium_style.border_width_right = 2
+			premium_style.border_color = Color(1.0, 0.7, 1.0, 0.5)
+			premium_style.shadow_size = 6
+			premium_style.shadow_color = Color(0.5, 0.0, 0.6, 0.4)
+			btn.add_theme_stylebox_override("normal", premium_style)
+			
+			var premium_hover = premium_style.duplicate()
+			premium_hover.bg_color = Color(0.7, 0.3, 0.8, 0.95)
+			btn.add_theme_stylebox_override("hover", premium_hover)
 		
 		# Check if can afford
-		if choice.get("isPremium", false):
+		if is_premium:
 			if GameManager.hearts < choice.get("heartsCost", 0):
 				btn.disabled = true
 		
 		btn.pressed.connect(_on_choice_selected.bind(choice))
+		
+		# Animate button entrance
+		btn.modulate.a = 0.0
 		choices_panel.add_child(btn)
+		var tween = create_tween()
+		tween.tween_property(btn, "modulate:a", 1.0, 0.2).set_delay(delay)
+		delay += 0.1
 
 func _on_choice_selected(choice: Dictionary) -> void:
 	choices_panel.visible = false

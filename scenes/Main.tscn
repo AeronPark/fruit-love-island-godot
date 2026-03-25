@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://main_scene"]
+[gd_scene load_steps=4 format=3 uid="uid://main_scene"]
 
 [ext_resource type="Script" path="res://scripts/StoryManager.gd" id="1_story"]
 [ext_resource type="Script" path="res://scripts/DialogueUI.gd" id="2_dialogue"]
+[ext_resource type="Theme" path="res://resources/themes/visual_novel_theme.tres" id="3_theme"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -39,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_theme")
 script = ExtResource("2_dialogue")
 
 [node name="DialoguePanel" type="Panel" parent="DialogueUI"]
