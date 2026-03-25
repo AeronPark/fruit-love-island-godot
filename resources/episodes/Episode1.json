@@ -1,0 +1,182 @@
+{
+  "episodeId": "ep1",
+  "episodeTitle": "Welcome to the Villa",
+  "episodeNumber": 1,
+  "nodes": [
+    {
+      "nodeId": "intro_1",
+      "nodeType": "Narration",
+      "backgroundId": "villa_exterior",
+      "dialogueText": "Welcome to Fruit Love Island! 🏝️ This season, 8 single fruits are looking for love. Will they find their perfect match, or will they leave empty-handed?",
+      "nextNodeId": "intro_2"
+    },
+    {
+      "nodeId": "intro_2",
+      "nodeType": "Narration",
+      "backgroundId": "villa_entrance",
+      "dialogueText": "As the new arrival, YOU have the power to shake things up. Choose wisely... your decisions will determine your fate.",
+      "nextNodeId": "arrival_1"
+    },
+    {
+      "nodeId": "arrival_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_pool",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "happy", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "happy",
+      "dialogueText": "OMG! A new arrival! I'm Stella the Strawberry. Welcome to paradise, sweetie! 🍓",
+      "nextNodeId": "arrival_2"
+    },
+    {
+      "nodeId": "arrival_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_pool",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "neutral", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "flirty", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "flirty",
+      "dialogueText": "Well, well, well... looks like things just got a lot more interesting around here. I'm Brad. Brad Banana. 🍌",
+      "nextNodeId": "first_choice"
+    },
+    {
+      "nodeId": "first_choice",
+      "nodeType": "Choice",
+      "backgroundId": "villa_pool",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "curious", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "flirty", "isHighlighted": true}
+      ],
+      "dialogueText": "Both fruits are looking at you expectantly. Who do you want to talk to first?",
+      "choices": [
+        {
+          "choiceText": "Chat with Stella 🍓",
+          "nextNodeId": "stella_chat_1",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 10},
+            {"characterId": "banana", "affectionChange": -5}
+          ]
+        },
+        {
+          "choiceText": "Talk to Brad 🍌",
+          "nextNodeId": "brad_chat_1",
+          "relationshipEffects": [
+            {"characterId": "banana", "affectionChange": 10},
+            {"characterId": "strawberry", "affectionChange": -5}
+          ]
+        },
+        {
+          "choiceText": "💎 Flirt with both at once",
+          "nextNodeId": "flirt_both",
+          "isPremium": true,
+          "heartsCost": 15,
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 5},
+            {"characterId": "banana", "affectionChange": 5}
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "stella_chat_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_pool",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "happy", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "happy",
+      "dialogueText": "I knew you had good taste! Come on, let me show you around. Brad can wait. 😏",
+      "nextNodeId": "stella_chat_2"
+    },
+    {
+      "nodeId": "stella_chat_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "neutral", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "neutral",
+      "dialogueText": "So tell me... what's your type? I need to know if we're going to be besties or... something more. 💕",
+      "nextNodeId": "meet_grape"
+    },
+    {
+      "nodeId": "brad_chat_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_pool",
+      "characters": [
+        {"characterId": "banana", "position": "Center", "emotion": "confident", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "confident",
+      "dialogueText": "Smart choice. Stella's sweet, but she's all sugar, no substance. Come with me, I'll give you the REAL tour.",
+      "nextNodeId": "brad_chat_2"
+    },
+    {
+      "nodeId": "brad_chat_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_gym",
+      "characters": [
+        {"characterId": "banana", "position": "Center", "emotion": "flirty", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "flirty",
+      "dialogueText": "This is where I spend most of my time. Gotta stay in shape, you know? So... you work out?",
+      "nextNodeId": "meet_grape"
+    },
+    {
+      "nodeId": "flirt_both",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_pool",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "shocked", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "shocked", "isHighlighted": true}
+      ],
+      "speakerId": "",
+      "dialogueText": "You flash a charming smile and wink at both of them. \"Why choose when I can have both of you show me around?\"",
+      "nextNodeId": "flirt_both_2"
+    },
+    {
+      "nodeId": "flirt_both_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_pool",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "happy", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "impressed", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "impressed",
+      "dialogueText": "Ha! I like you already. You've got confidence. This is going to be a fun season.",
+      "nextNodeId": "meet_grape"
+    },
+    {
+      "nodeId": "meet_grape",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "mysterious", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "mysterious",
+      "dialogueText": "I've been watching you since you arrived. I'm Gigi. Gigi Grape. And I think you might be... interesting. 🍇",
+      "nextNodeId": "confessional_1"
+    },
+    {
+      "nodeId": "confessional_1",
+      "nodeType": "Confessional",
+      "backgroundId": "confessional_booth",
+      "dialogueText": "🎬 CONFESSIONAL: So there's definitely some tension in the villa already. Stella seems sweet, Brad's clearly into himself, and Gigi... there's something about her I can't figure out. This is going to be wild.",
+      "nextNodeId": "ep1_end"
+    },
+    {
+      "nodeId": "ep1_end",
+      "nodeType": "EndEpisode",
+      "backgroundId": "villa_night",
+      "dialogueText": "🌙 END OF EPISODE 1\n\nNext time on Fruit Love Island: The first coupling ceremony! Who will you choose to partner with? And what secrets are the other fruits hiding?\n\n➡️ Continue to Episode 2"
+    }
+  ]
+}
