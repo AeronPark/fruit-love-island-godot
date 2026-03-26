@@ -1,0 +1,427 @@
+{
+  "episodeId": "ep2",
+  "episodeTitle": "The First Coupling",
+  "episodeNumber": 2,
+  "nodes": [
+    {
+      "nodeId": "ep2_intro",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "excited", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "excited",
+      "dialogueText": "Good morning, islanders! ☀️ I hope you're ready because tonight... is the FIRST COUPLING CEREMONY!",
+      "nextNodeId": "ep2_intro_2"
+    },
+    {
+      "nodeId": "ep2_intro_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "happy", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "happy",
+      "dialogueText": "But first... we have some NEW arrivals! Let's welcome them to Fruit Love Island! 🎉",
+      "nextNodeId": "new_arrivals_1"
+    },
+    {
+      "nodeId": "new_arrivals_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "orange", "position": "Center", "emotion": "happy", "isHighlighted": true}
+      ],
+      "speakerId": "orange",
+      "speakerEmotion": "happy",
+      "dialogueText": "Hey everyone! I'm Oliver Orange! 🍊 I'm here to squeeze the most out of this experience! Get it? Squeeze? ...Anyone?",
+      "nextNodeId": "new_arrivals_2"
+    },
+    {
+      "nodeId": "new_arrivals_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "orange", "position": "Left", "emotion": "nervous", "isHighlighted": false},
+        {"characterId": "watermelon", "position": "Right", "emotion": "confident", "isHighlighted": true}
+      ],
+      "speakerId": "watermelon",
+      "speakerEmotion": "confident",
+      "dialogueText": "I'm Wanda Watermelon. 🍉 And unlike some people, I'm here for serious connections. Not corny jokes.",
+      "nextNodeId": "new_arrivals_3"
+    },
+    {
+      "nodeId": "new_arrivals_3",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "pineapple", "position": "Center", "emotion": "confident", "isHighlighted": true}
+      ],
+      "speakerId": "pineapple",
+      "speakerEmotion": "confident",
+      "dialogueText": "What's up, party people! Pete Pineapple in the house! 🍍 Who's ready to have the BEST time of their lives?!",
+      "nextNodeId": "villa_reaction"
+    },
+    {
+      "nodeId": "villa_reaction",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "worried", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "annoyed", "isHighlighted": false}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "worried",
+      "dialogueText": "Wait... more competition? I thought we already had enough people here! 😰",
+      "nextNodeId": "villa_reaction_2"
+    },
+    {
+      "nodeId": "villa_reaction_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "worried", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "jealous", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "jealous",
+      "dialogueText": "Great. Another guy who thinks he's the main character. Pete, was it? Good luck with that energy, bro.",
+      "nextNodeId": "oliver_approach"
+    },
+    {
+      "nodeId": "oliver_approach",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "orange", "position": "Center", "emotion": "friendly", "isHighlighted": true}
+      ],
+      "speakerId": "orange",
+      "speakerEmotion": "friendly",
+      "dialogueText": "Hey! You're the newest arrival before us, right? I heard you made quite an entrance yesterday. Mind showing me around?",
+      "nextNodeId": "oliver_choice"
+    },
+    {
+      "nodeId": "oliver_choice",
+      "nodeType": "Choice",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "orange", "position": "Center", "emotion": "hopeful", "isHighlighted": true}
+      ],
+      "dialogueText": "Oliver seems genuinely nice. What do you do?",
+      "choices": [
+        {
+          "choiceText": "Sure, I'd love to! 😊",
+          "nextNodeId": "oliver_tour",
+          "relationshipEffects": [
+            {"characterId": "orange", "affectionChange": 15}
+          ]
+        },
+        {
+          "choiceText": "I'm kind of busy right now...",
+          "nextNodeId": "oliver_reject",
+          "relationshipEffects": [
+            {"characterId": "orange", "affectionChange": -10}
+          ]
+        },
+        {
+          "choiceText": "💎 Tell a cheesy joke back",
+          "nextNodeId": "oliver_joke",
+          "isPremium": true,
+          "heartsCost": 10,
+          "relationshipEffects": [
+            {"characterId": "orange", "affectionChange": 25}
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "oliver_tour",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "orange", "position": "Center", "emotion": "happy", "isHighlighted": true}
+      ],
+      "speakerId": "orange",
+      "speakerEmotion": "happy",
+      "dialogueText": "Awesome! You know, everyone thinks I'm just the funny guy, but I'm actually looking for something real here. Thanks for giving me a chance.",
+      "nextNodeId": "wanda_drama"
+    },
+    {
+      "nodeId": "oliver_reject",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "orange", "position": "Center", "emotion": "sad", "isHighlighted": true}
+      ],
+      "speakerId": "orange",
+      "speakerEmotion": "sad",
+      "dialogueText": "Oh... yeah, no problem. I get it. Maybe later then? ...No? Okay, cool cool cool.",
+      "nextNodeId": "wanda_drama"
+    },
+    {
+      "nodeId": "oliver_joke",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "orange", "position": "Center", "emotion": "laughing", "isHighlighted": true}
+      ],
+      "speakerId": "",
+      "dialogueText": "You grin and say: \"Orange you glad you asked? Because I'm a-PEEL-ed by your charm!\"",
+      "nextNodeId": "oliver_joke_2"
+    },
+    {
+      "nodeId": "oliver_joke_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "orange", "position": "Center", "emotion": "excited", "isHighlighted": true}
+      ],
+      "speakerId": "orange",
+      "speakerEmotion": "excited",
+      "dialogueText": "OH MY GOD. Finally! Someone who gets it!! 😂 I think I'm in love already! Where have you been all my life?!",
+      "nextNodeId": "wanda_drama"
+    },
+    {
+      "nodeId": "wanda_drama",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "watermelon", "position": "Left", "emotion": "angry", "isHighlighted": true},
+        {"characterId": "grape", "position": "Right", "emotion": "smirk", "isHighlighted": false}
+      ],
+      "speakerId": "watermelon",
+      "speakerEmotion": "angry",
+      "dialogueText": "I just heard Gigi telling the others that I'm 'too intense.' Excuse me?! We've known each other for FIVE MINUTES.",
+      "nextNodeId": "wanda_drama_2"
+    },
+    {
+      "nodeId": "wanda_drama_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "watermelon", "position": "Left", "emotion": "upset", "isHighlighted": false},
+        {"characterId": "grape", "position": "Right", "emotion": "innocent", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "innocent",
+      "dialogueText": "I never said that. I said you seem... passionate. There's a difference. 🍇 But if the seed fits...",
+      "nextNodeId": "wanda_choice"
+    },
+    {
+      "nodeId": "wanda_choice",
+      "nodeType": "Choice",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "watermelon", "position": "Left", "emotion": "upset", "isHighlighted": true},
+        {"characterId": "grape", "position": "Right", "emotion": "smirk", "isHighlighted": true}
+      ],
+      "dialogueText": "The tension is THICK. Both fruits turn to you. Whose side are you on?",
+      "choices": [
+        {
+          "choiceText": "Defend Wanda",
+          "nextNodeId": "defend_wanda",
+          "relationshipEffects": [
+            {"characterId": "watermelon", "affectionChange": 20},
+            {"characterId": "grape", "affectionChange": -15}
+          ]
+        },
+        {
+          "choiceText": "Side with Gigi",
+          "nextNodeId": "side_gigi",
+          "relationshipEffects": [
+            {"characterId": "grape", "affectionChange": 20},
+            {"characterId": "watermelon", "affectionChange": -15}
+          ]
+        },
+        {
+          "choiceText": "Stay neutral",
+          "nextNodeId": "stay_neutral",
+          "relationshipEffects": [
+            {"characterId": "watermelon", "affectionChange": -5},
+            {"characterId": "grape", "affectionChange": -5}
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "defend_wanda",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "watermelon", "position": "Center", "emotion": "grateful", "isHighlighted": true}
+      ],
+      "speakerId": "watermelon",
+      "speakerEmotion": "grateful",
+      "dialogueText": "Thank you! Finally, someone with sense. I knew I liked you. Gigi's been playing games since minute one.",
+      "nextNodeId": "coupling_announcement"
+    },
+    {
+      "nodeId": "side_gigi",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "pleased", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "pleased",
+      "dialogueText": "Smart choice. Wanda needs to learn that not everything is a personal attack. Some of us are just... observant. 😏",
+      "nextNodeId": "coupling_announcement"
+    },
+    {
+      "nodeId": "stay_neutral",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "watermelon", "position": "Left", "emotion": "disappointed", "isHighlighted": true},
+        {"characterId": "grape", "position": "Right", "emotion": "unimpressed", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "unimpressed",
+      "dialogueText": "How diplomatic. Playing it safe won't get you far in this game, you know.",
+      "nextNodeId": "coupling_announcement"
+    },
+    {
+      "nodeId": "coupling_announcement",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "excited", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "excited",
+      "dialogueText": "Islanders! It's time for the FIRST COUPLING CEREMONY! 💕 Please gather at the firepit!",
+      "nextNodeId": "coupling_ceremony"
+    },
+    {
+      "nodeId": "coupling_ceremony",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "serious", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "serious",
+      "dialogueText": "Tonight, each of you will couple up with another islander. But remember... at the end of the week, one couple will be DUMPED from the island!",
+      "nextNodeId": "coupling_choice"
+    },
+    {
+      "nodeId": "coupling_choice",
+      "nodeType": "Choice",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "expectant", "isHighlighted": true}
+      ],
+      "dialogueText": "It's your turn to choose. Who do you want to couple up with?",
+      "choices": [
+        {
+          "choiceText": "Brad 🍌 - The confident one",
+          "nextNodeId": "couple_brad",
+          "relationshipEffects": [
+            {"characterId": "banana", "affectionChange": 25},
+            {"characterId": "strawberry", "affectionChange": -10}
+          ]
+        },
+        {
+          "choiceText": "Stella 🍓 - The sweet one",
+          "nextNodeId": "couple_stella",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 25},
+            {"characterId": "grape", "affectionChange": -5}
+          ]
+        },
+        {
+          "choiceText": "Oliver 🍊 - The funny one",
+          "nextNodeId": "couple_oliver",
+          "relationshipEffects": [
+            {"characterId": "orange", "affectionChange": 25}
+          ]
+        },
+        {
+          "choiceText": "💎 Gigi 🍇 - The mysterious one",
+          "nextNodeId": "couple_gigi",
+          "isPremium": true,
+          "heartsCost": 20,
+          "relationshipEffects": [
+            {"characterId": "grape", "affectionChange": 30},
+            {"characterId": "watermelon", "affectionChange": -10}
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "couple_brad",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "banana", "position": "Center", "emotion": "pleased", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "pleased",
+      "dialogueText": "I was hoping you'd pick me. We're gonna be the power couple of this island. Just watch. 💪",
+      "nextNodeId": "confessional_2"
+    },
+    {
+      "nodeId": "couple_stella",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "overjoyed", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "overjoyed",
+      "dialogueText": "EEEEK! Yes yes yes! I had the BEST feeling about you from the start! We're going to be the cutest couple! 🍓💕",
+      "nextNodeId": "confessional_2"
+    },
+    {
+      "nodeId": "couple_oliver",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "orange", "position": "Center", "emotion": "shocked_happy", "isHighlighted": true}
+      ],
+      "speakerId": "orange",
+      "speakerEmotion": "shocked_happy",
+      "dialogueText": "Wait, really?! You picked ME?! I... wow. I'm not used to being anyone's first choice. This means a lot. 🍊",
+      "nextNodeId": "confessional_2"
+    },
+    {
+      "nodeId": "couple_gigi",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "intrigued", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "intrigued",
+      "dialogueText": "Interesting choice. Most people are too intimidated to approach me. You've got layers. I like that. 🍇",
+      "nextNodeId": "confessional_2"
+    },
+    {
+      "nodeId": "confessional_2",
+      "nodeType": "Confessional",
+      "backgroundId": "confessional_booth",
+      "dialogueText": "🎬 CONFESSIONAL: Okay, first coupling done. But I can already see the drama brewing. Brad and Pete are definitely going to clash, Wanda has her eyes on SOMEONE (and it might be my partner?!), and Gigi... she's always watching. Always.",
+      "nextNodeId": "ep2_cliffhanger"
+    },
+    {
+      "nodeId": "ep2_cliffhanger",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_night",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "mischievous", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "mischievous",
+      "dialogueText": "Oh, one more thing islanders... I have a TEXT! 📱 Tomorrow, a BOMBSHELL will be entering the villa. And they get to steal ANY partner they want!",
+      "nextNodeId": "ep2_end"
+    },
+    {
+      "nodeId": "ep2_end",
+      "nodeType": "EndEpisode",
+      "backgroundId": "villa_night",
+      "dialogueText": "🌙 END OF EPISODE 2\n\nNext time on Fruit Love Island: A bombshell arrival threatens to tear couples apart! Plus: secret conversations, jealousy, and the first MAJOR fight!\n\n➡️ Continue to Episode 3"
+    }
+  ]
+}
