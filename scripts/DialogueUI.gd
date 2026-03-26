@@ -214,7 +214,7 @@ func update_characters(characters: Array) -> void:
 				_: # Center
 					x_pos = viewport_size.x * 0.15
 			
-			sprite.position = Vector2(x_pos, viewport_size.y * 0.12)
+			sprite.position = Vector2(x_pos, viewport_size.y * 0.22)
 			
 			# Full opacity for all characters (no dimming for now)
 			sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
