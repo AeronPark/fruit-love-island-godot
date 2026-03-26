@@ -8,12 +8,14 @@ extends Control
 
 var characters_to_show: Array = ["strawberry", "banana", "grape", "mango", "watermelon", "orange"]
 var character_paths: Dictionary = {
-	"strawberry": "res://assets/Art/Characters/strawberry_removebg.png",
-	"banana": "res://assets/Art/Characters/Banana_rbg.png",
-	"grape": "res://assets/Art/Characters/Grape_rbg.png",
-	"orange": "res://assets/Art/Characters/Orange_rbg.png",
-	"watermelon": "res://assets/Art/Characters/watermelon_rbg.png",
-	"mango": "res://assets/Art/Characters/Mango_rbg.png"
+	"strawberry": "res://assets/Art/Characters/v2/strawberry_glamour.png",
+	"banana": "res://assets/Art/Characters/v2/banana_glamour.png",
+	"grape": "res://assets/Art/Characters/v2/grape_glamour.png",
+	"orange": "res://assets/Art/Characters/v2/orange_glamour.png",
+	"watermelon": "res://assets/Art/Characters/v2/watermelon_glamour.png",
+	"mango": "res://assets/Art/Characters/v2/mango_glamour.png",
+	"pineapple": "res://assets/Art/Characters/v2/pineapple_glamour.png",
+	"cherry": "res://assets/Art/Characters/v2/cherry_twins_glamour.png"
 }
 
 func _ready() -> void:
