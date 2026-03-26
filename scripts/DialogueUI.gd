@@ -190,14 +190,14 @@ func update_characters(characters: Array) -> void:
 			sprite.anchor_bottom = 1.05
 			match char_position:
 				"Left":
-					sprite.anchor_left = -0.15
-					sprite.anchor_right = 0.45
+					sprite.anchor_left = 0.0
+					sprite.anchor_right = 0.5
 				"Right":
-					sprite.anchor_left = 0.55
-					sprite.anchor_right = 1.15
+					sprite.anchor_left = 0.5
+					sprite.anchor_right = 1.0
 				_: # Center
-					sprite.anchor_left = 0.1
-					sprite.anchor_right = 0.9
+					sprite.anchor_left = 0.15
+					sprite.anchor_right = 0.85
 			
 			sprite.offset_left = 0
 			sprite.offset_right = 0
