@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://mainmenu_scene"]
+[gd_scene format=3 uid="uid://gc6g7dt6o620"]
 
-[ext_resource type="Theme" path="res://resources/themes/visual_novel_theme.tres" id="1_theme"]
-[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="2_script"]
-[ext_resource type="Texture2D" path="res://assets/Art/UI/logo.png" id="3_logo"]
+[ext_resource type="Theme" uid="uid://doe21a5ijdp1n" path="res://resources/themes/visual_novel_theme.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://kwvxmjho6pjs" path="res://scripts/MainMenu.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://bn2mpfjjpyene" path="res://assets/Art/UI/logo.png" id="3_logo"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1192624244]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ grow_vertical = 2
 theme = ExtResource("1_theme")
 script = ExtResource("2_script")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=549820805]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +24,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Overlay" type="ColorRect" parent="."]
+[node name="Overlay" type="ColorRect" parent="." unique_id=1347489328]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,23 +33,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.3)
 
-[node name="Logo" type="TextureRect" parent="."]
+[node name="Logo" type="TextureRect" parent="." unique_id=1353544294]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.06
 anchor_right = 0.5
 anchor_bottom = 0.06
-offset_left = -420.0
-offset_top = 0.0
-offset_right = 420.0
-offset_bottom = 340.0
+offset_left = -516.0
+offset_top = 135.8
+offset_right = 528.0
+offset_bottom = 803.8
 grow_horizontal = 2
 texture = ExtResource("3_logo")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Content" type="VBoxContainer" parent="."]
+[node name="Content" type="VBoxContainer" parent="." unique_id=239665561]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,28 +65,28 @@ grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="Content"]
+[node name="PlayButton" type="Button" parent="Content" unique_id=549624716]
 custom_minimum_size = Vector2(350, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 42
 text = "▶  PLAY"
 
-[node name="EpisodesButton" type="Button" parent="Content"]
+[node name="EpisodesButton" type="Button" parent="Content" unique_id=879824812]
 custom_minimum_size = Vector2(350, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 36
 text = "📖  Episodes"
 
-[node name="SettingsButton" type="Button" parent="Content"]
+[node name="SettingsButton" type="Button" parent="Content" unique_id=109413272]
 custom_minimum_size = Vector2(350, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 36
 text = "⚙️  Settings"
 
-[node name="CharacterShowcase" type="HBoxContainer" parent="."]
+[node name="CharacterShowcase" type="HBoxContainer" parent="." unique_id=1008140669]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
