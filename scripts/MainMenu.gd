@@ -4,23 +4,10 @@ extends Control
 @onready var play_button: Button = $Content/PlayButton
 @onready var episodes_button: Button = $Content/EpisodesButton
 @onready var settings_button: Button = $Content/SettingsButton
-@onready var character_showcase: HBoxContainer = $CharacterShowcase
-
-var characters_to_show: Array = ["strawberry", "banana", "grape", "mango", "watermelon", "orange"]
-var character_paths: Dictionary = {
-	"strawberry": "res://assets/Art/Characters/v2/transparent/strawberry_glamour_transparent.png",
-	"banana": "res://assets/Art/Characters/v2/transparent/banana_glamour_transparent.png",
-	"grape": "res://assets/Art/Characters/v2/transparent/grape_glamour_transparent.png",
-	"orange": "res://assets/Art/Characters/v2/transparent/orange_glamour_transparent.png",
-	"watermelon": "res://assets/Art/Characters/v2/transparent/watermelon_glamour_transparent.png",
-	"mango": "res://assets/Art/Characters/v2/transparent/mango_glamour_transparent.png",
-	"pineapple": "res://assets/Art/Characters/v2/transparent/pineapple_glamour_transparent.png",
-	"cherry": "res://assets/Art/Characters/v2/transparent/cherry_twins_glamour_transparent.png"
-}
 
 func _ready() -> void:
-	# Load background
-	var bg_path = "res://assets/Art/Backgrounds/villa_exterior.png"
+	# Load new title screen background
+	var bg_path = "res://assets/Art/Backgrounds/title_screen.jpg"
 	if ResourceLoader.exists(bg_path):
 		background.texture = load(bg_path)
 	
@@ -29,22 +16,13 @@ func _ready() -> void:
 	episodes_button.pressed.connect(_on_episodes_pressed)
 	settings_button.pressed.connect(_on_settings_pressed)
 	
-	# Show character silhouettes
-	_setup_character_showcase()
+	# Hide character showcase if it exists
+	var showcase = get_node_or_null("CharacterShowcase")
+	if showcase:
+		showcase.visible = false
 	
-	# Animate title
+	# Animate entrance
 	_animate_entrance()
-
-func _setup_character_showcase() -> void:
-	for char_id in characters_to_show:
-		if character_paths.has(char_id):
-			var sprite = TextureRect.new()
-			sprite.texture = load(character_paths[char_id])
-			sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-			sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			sprite.custom_minimum_size = Vector2(150, 400)
-			sprite.modulate.a = 0.7
-			character_showcase.add_child(sprite)
 
 func _animate_entrance() -> void:
 	# Fade in buttons
@@ -53,7 +31,7 @@ func _animate_entrance() -> void:
 	settings_button.modulate.a = 0
 	
 	var tween = create_tween()
-	tween.tween_property(play_button, "modulate:a", 1.0, 0.3).set_delay(0.3)
+	tween.tween_property(play_button, "modulate:a", 1.0, 0.3).set_delay(0.5)
 	tween.tween_property(episodes_button, "modulate:a", 1.0, 0.3).set_delay(0.1)
 	tween.tween_property(settings_button, "modulate:a", 1.0, 0.3).set_delay(0.1)
 
