@@ -30,7 +30,7 @@
     {
       "nodeId": "arrival_1",
       "nodeType": "Dialogue",
-      "backgroundId": "villa_pool",
+      "backgroundId": "villa_path",
       "characters": [
         {"characterId": "strawberry", "position": "Center", "emotion": "happy", "isHighlighted": true}
       ],
@@ -42,7 +42,7 @@
     {
       "nodeId": "arrival_2",
       "nodeType": "Dialogue",
-      "backgroundId": "villa_pool",
+      "backgroundId": "villa_path",
       "characters": [
         {"characterId": "strawberry", "position": "Left", "emotion": "neutral", "isHighlighted": false},
         {"characterId": "banana", "position": "Right", "emotion": "flirty", "isHighlighted": true}
@@ -55,7 +55,7 @@
     {
       "nodeId": "first_choice",
       "nodeType": "Choice",
-      "backgroundId": "villa_pool",
+      "backgroundId": "villa_path",
       "characters": [
         {"characterId": "strawberry", "position": "Left", "emotion": "curious", "isHighlighted": true},
         {"characterId": "banana", "position": "Right", "emotion": "flirty", "isHighlighted": true}
@@ -93,7 +93,7 @@
     {
       "nodeId": "stella_chat_1",
       "nodeType": "Dialogue",
-      "backgroundId": "villa_pool",
+      "backgroundId": "villa_path",
       "characters": [
         {"characterId": "strawberry", "position": "Center", "emotion": "happy", "isHighlighted": true}
       ],
@@ -117,7 +117,7 @@
     {
       "nodeId": "brad_chat_1",
       "nodeType": "Dialogue",
-      "backgroundId": "villa_pool",
+      "backgroundId": "villa_path",
       "characters": [
         {"characterId": "banana", "position": "Center", "emotion": "confident", "isHighlighted": true}
       ],
@@ -141,7 +141,7 @@
     {
       "nodeId": "flirt_both",
       "nodeType": "Dialogue",
-      "backgroundId": "villa_pool",
+      "backgroundId": "villa_path",
       "characters": [
         {"characterId": "strawberry", "position": "Left", "emotion": "shocked", "isHighlighted": true},
         {"characterId": "banana", "position": "Right", "emotion": "shocked", "isHighlighted": true}
@@ -153,7 +153,7 @@
     {
       "nodeId": "flirt_both_2",
       "nodeType": "Dialogue",
-      "backgroundId": "villa_pool",
+      "backgroundId": "villa_path",
       "characters": [
         {"characterId": "strawberry", "position": "Left", "emotion": "happy", "isHighlighted": true},
         {"characterId": "banana", "position": "Right", "emotion": "impressed", "isHighlighted": true}

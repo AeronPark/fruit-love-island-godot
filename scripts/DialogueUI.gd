@@ -129,6 +129,7 @@ func load_background(bg_id: String) -> void:
 	var bg_paths: Dictionary = {
 		"villa_exterior": "res://assets/Art/Backgrounds/villa_exterior.jpg",
 		"villa_entrance": "res://assets/Art/Backgrounds/villa_exterior.jpg",
+		"villa_path": "res://assets/Art/Backgrounds/villa_path.jpg",
 		"villa_pool": "res://assets/Art/Backgrounds/villa_pool.jpg",
 		"villa_garden": "res://assets/Art/Backgrounds/villa_garden.jpg",
 		"villa_gym": "res://assets/Art/Backgrounds/villa_gym.jpg",
