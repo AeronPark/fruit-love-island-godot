@@ -78,11 +78,26 @@ func load_episode_from_json(path: String) -> Dictionary:
 	
 	return json.data
 
+var previous_bg_id: String = ""
+
 func _on_node_changed(node: Dictionary) -> void:
 	# Update background
 	var bg_id = node.get("backgroundId", "")
+	var entering_confessional = bg_id == "confessional_booth" and previous_bg_id != "confessional_booth"
+	var leaving_confessional = bg_id != "confessional_booth" and previous_bg_id == "confessional_booth"
+	
 	if bg_id != "":
+		previous_bg_id = bg_id
 		load_background(bg_id)
+	
+	# When entering confessional, clear all characters so Gigi animates in fresh
+	if entering_confessional:
+		for char_id in active_character_sprites.keys():
+			var sprite = active_character_sprites[char_id]
+			slide_out_character(sprite, get_viewport().get_visible_rect().size)
+		active_character_sprites.clear()
+		# Small delay for slide out before slide in
+		await get_tree().create_timer(0.15).timeout
 	
 	# Update characters on screen
 	var characters = node.get("characters", [])
