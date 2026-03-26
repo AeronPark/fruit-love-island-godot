@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" format=3 uid="uid://default_emoji_font"]
+
+[ext_resource type="FontFile" path="res://assets/Fonts/NotoColorEmoji.ttf" id="1_emoji"]
+
+[resource]
+fallbacks = [ExtResource("1_emoji")]
