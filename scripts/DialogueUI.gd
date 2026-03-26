@@ -185,24 +185,26 @@ func update_characters(characters: Array) -> void:
 			sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			
-			# Position based on Left/Center/Right - characters at bottom
-			sprite.anchor_top = 0.35
-			sprite.anchor_bottom = 1.05
+			# Get viewport size for positioning
+			var viewport_size = get_viewport().get_visible_rect().size
+			var char_width = viewport_size.x * 0.6
+			var char_height = viewport_size.y * 0.7
+			
+			# Set size
+			sprite.custom_minimum_size = Vector2(char_width, char_height)
+			sprite.size = Vector2(char_width, char_height)
+			
+			# Position based on Left/Center/Right
+			var x_pos: float
 			match char_position:
 				"Left":
-					sprite.anchor_left = 0.0
-					sprite.anchor_right = 0.5
+					x_pos = viewport_size.x * 0.05
 				"Right":
-					sprite.anchor_left = 0.5
-					sprite.anchor_right = 1.0
+					x_pos = viewport_size.x * 0.35
 				_: # Center
-					sprite.anchor_left = 0.15
-					sprite.anchor_right = 0.85
+					x_pos = viewport_size.x * 0.2
 			
-			sprite.offset_left = 0
-			sprite.offset_right = 0
-			sprite.offset_top = 0
-			sprite.offset_bottom = 0
+			sprite.position = Vector2(x_pos, viewport_size.y * 0.28)
 			
 			# Dim non-highlighted characters
 			if not is_highlighted:
@@ -212,11 +214,12 @@ func update_characters(characters: Array) -> void:
 			active_character_sprites[char_id] = sprite
 			
 			# Slide in animation
-			var start_x = 300.0 if char_position == "Right" else -300.0
+			var final_x = sprite.position.x
+			var start_x = final_x + (300.0 if char_position == "Right" else -300.0)
 			sprite.position.x = start_x
 			sprite.modulate.a = 0.0
 			var tween = create_tween()
-			tween.tween_property(sprite, "position:x", 0.0, 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_delay(delay)
+			tween.tween_property(sprite, "position:x", final_x, 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_delay(delay)
 			tween.parallel().tween_property(sprite, "modulate:a", 1.0 if is_highlighted else 0.6, 0.3).set_delay(delay)
 			delay += 0.1
 
