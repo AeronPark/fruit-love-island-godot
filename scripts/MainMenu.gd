@@ -8,14 +8,14 @@ extends Control
 
 var characters_to_show: Array = ["strawberry", "banana", "grape", "mango", "watermelon", "orange"]
 var character_paths: Dictionary = {
-	"strawberry": "res://assets/Art/Characters/v2/strawberry_glamour.png",
-	"banana": "res://assets/Art/Characters/v2/banana_glamour.png",
-	"grape": "res://assets/Art/Characters/v2/grape_glamour.png",
-	"orange": "res://assets/Art/Characters/v2/orange_glamour.png",
-	"watermelon": "res://assets/Art/Characters/v2/watermelon_glamour.png",
-	"mango": "res://assets/Art/Characters/v2/mango_glamour.png",
-	"pineapple": "res://assets/Art/Characters/v2/pineapple_glamour.png",
-	"cherry": "res://assets/Art/Characters/v2/cherry_twins_glamour.png"
+	"strawberry": "res://assets/Art/Characters/v2/transparent/strawberry_glamour_transparent.png",
+	"banana": "res://assets/Art/Characters/v2/transparent/banana_glamour_transparent.png",
+	"grape": "res://assets/Art/Characters/v2/transparent/grape_glamour_transparent.png",
+	"orange": "res://assets/Art/Characters/v2/transparent/orange_glamour_transparent.png",
+	"watermelon": "res://assets/Art/Characters/v2/transparent/watermelon_glamour_transparent.png",
+	"mango": "res://assets/Art/Characters/v2/transparent/mango_glamour_transparent.png",
+	"pineapple": "res://assets/Art/Characters/v2/transparent/pineapple_glamour_transparent.png",
+	"cherry": "res://assets/Art/Characters/v2/transparent/cherry_twins_glamour_transparent.png"
 }
 
 func _ready() -> void:

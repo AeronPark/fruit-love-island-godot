@@ -137,16 +137,16 @@ func load_background(bg_id: String) -> void:
 @onready var character_container: Control = get_node("../CharacterContainer")
 var active_character_sprites: Dictionary = {}
 
-# Character sprite paths (v2 - viral style with muted tones)
+# Character sprite paths (v2 - transparent backgrounds)
 var character_sprites: Dictionary = {
-	"strawberry": "res://assets/Art/Characters/v2/strawberry_v2.png",
-	"banana": "res://assets/Art/Characters/v2/banana_glamour.png",
-	"grape": "res://assets/Art/Characters/v2/grape_glamour.png",
-	"orange": "res://assets/Art/Characters/v2/orange_glamour.png",
-	"watermelon": "res://assets/Art/Characters/v2/watermelon_glamour.png",
-	"mango": "res://assets/Art/Characters/v2/mango_glamour.png",
-	"pineapple": "res://assets/Art/Characters/v2/pineapple_glamour.png",
-	"cherry": "res://assets/Art/Characters/v2/cherry_v2.png"
+	"strawberry": "res://assets/Art/Characters/v2/transparent/strawberry_v2_transparent.png",
+	"banana": "res://assets/Art/Characters/v2/transparent/banana_glamour_transparent.png",
+	"grape": "res://assets/Art/Characters/v2/transparent/grape_glamour_transparent.png",
+	"orange": "res://assets/Art/Characters/v2/transparent/orange_glamour_transparent.png",
+	"watermelon": "res://assets/Art/Characters/v2/transparent/watermelon_glamour_transparent.png",
+	"mango": "res://assets/Art/Characters/v2/transparent/mango_glamour_transparent.png",
+	"pineapple": "res://assets/Art/Characters/v2/transparent/pineapple_glamour_transparent.png",
+	"cherry": "res://assets/Art/Characters/v2/transparent/cherry_v2_transparent.png"
 }
 
 # Character expressions (override base when emotion specified)
