@@ -13,6 +13,7 @@ extends Control
 var character_names: Dictionary = {
 	"strawberry": "Stella 🍓",
 	"banana": "Brad 🍌",
+	"peach": "Penny 🍑",
 	"grape": "Gigi 🍇",
 	"orange": "Oliver 🍊",
 	"watermelon": "Wanda 🍉",
@@ -141,6 +142,7 @@ var active_character_sprites: Dictionary = {}
 var character_sprites: Dictionary = {
 	"strawberry": "res://assets/Art/Characters/v3/strawberry_stella_final.png",
 	"banana": "res://assets/Art/Characters/v3/banana_brad_final.png",
+	"peach": "res://assets/Art/Characters/v3/peach_hostess.png",
 	"grape": "res://assets/Art/Characters/v2/transparent/grape_glamour_transparent.png",
 	"orange": "res://assets/Art/Characters/v2/transparent/orange_glamour_transparent.png",
 	"watermelon": "res://assets/Art/Characters/v2/transparent/watermelon_glamour_transparent.png",
@@ -153,6 +155,7 @@ var character_sprites: Dictionary = {
 var character_scales: Dictionary = {
 	"strawberry": 0.9,
 	"banana": 1.0,
+	"peach": 1.0,
 	"grape": 1.0,
 	"orange": 1.0,
 	"watermelon": 1.0,

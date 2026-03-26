@@ -5,16 +5,26 @@
   "nodes": [
     {
       "nodeId": "intro_1",
-      "nodeType": "Narration",
+      "nodeType": "Dialogue",
       "backgroundId": "villa_exterior",
-      "dialogueText": "Welcome to Fruit Love Island! 🏝️ This season, 8 single fruits are looking for love. Will they find their perfect match, or will they leave empty-handed?",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "happy", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "happy",
+      "dialogueText": "Welcome to Fruit Love Island! 🏝️ This season, 8 single fruits are looking for love. Will they find their perfect match?",
       "nextNodeId": "intro_2"
     },
     {
       "nodeId": "intro_2",
-      "nodeType": "Narration",
-      "backgroundId": "villa_entrance",
-      "dialogueText": "As the new arrival, YOU have the power to shake things up. Choose wisely... your decisions will determine your fate.",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "excited", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "excited",
+      "dialogueText": "As the new arrival, YOU have the power to shake things up. Choose wisely... your decisions will determine your fate!",
       "nextNodeId": "arrival_1"
     },
     {
