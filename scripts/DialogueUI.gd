@@ -157,12 +157,9 @@ var character_expressions: Dictionary = {
 }
 
 func update_characters(characters: Array) -> void:
-	# Slide out existing characters
+	# Clear existing characters immediately
 	for child in character_container.get_children():
-		var tween = create_tween()
-		tween.tween_property(child, "position:x", child.position.x - 200, 0.2)
-		tween.parallel().tween_property(child, "modulate:a", 0.0, 0.2)
-		tween.tween_callback(child.queue_free)
+		child.queue_free()
 	active_character_sprites.clear()
 	
 	# Add new character sprites with slide in
@@ -206,23 +203,11 @@ func update_characters(characters: Array) -> void:
 			
 			sprite.position = Vector2(x_pos, viewport_size.y * 0.28)
 			
+			# Full opacity for all characters (no dimming for now)
+			sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			
 			character_container.add_child(sprite)
 			active_character_sprites[char_id] = sprite
-			
-			# Slide in animation
-			var final_x = sprite.position.x
-			var start_x = final_x + (300.0 if char_position == "Right" else -300.0)
-			sprite.position.x = start_x
-			sprite.modulate.a = 0.0
-			
-			# Determine final opacity - highlighted = full, non-highlighted = dimmed
-			var final_alpha = 1.0 if is_highlighted else 0.5
-			var final_color = Color(1.0, 1.0, 1.0, final_alpha) if is_highlighted else Color(0.7, 0.7, 0.7, final_alpha)
-			
-			var tween = create_tween()
-			tween.tween_property(sprite, "position:x", final_x, 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_delay(delay)
-			tween.tween_property(sprite, "modulate", final_color, 0.3).set_delay(delay)
-			delay += 0.1
 
 func start_typewriter(text: String) -> void:
 	full_text = text
