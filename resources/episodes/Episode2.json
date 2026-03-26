@@ -12,7 +12,7 @@
       ],
       "speakerId": "peach",
       "speakerEmotion": "excited",
-      "dialogueText": "Good morning, islanders! ☀️ I hope you're ready because tonight... is the FIRST COUPLING CEREMONY!",
+      "dialogueText": "Good morning, islanders!  I hope you're ready because tonight... is the FIRST COUPLING CEREMONY!",
       "nextNodeId": "ep2_intro_2"
     },
     {
@@ -24,7 +24,7 @@
       ],
       "speakerId": "peach",
       "speakerEmotion": "happy",
-      "dialogueText": "But first... we have some NEW arrivals! Let's welcome them to Fruit Love Island! 🎉",
+      "dialogueText": "But first... we have some NEW arrivals! Let's welcome them to Fruit Love Island! ",
       "nextNodeId": "new_arrivals_1"
     },
     {
@@ -36,7 +36,7 @@
       ],
       "speakerId": "orange",
       "speakerEmotion": "happy",
-      "dialogueText": "Hey everyone! I'm Oliver Orange! 🍊 I'm here to squeeze the most out of this experience! Get it? Squeeze? ...Anyone?",
+      "dialogueText": "Hey everyone! I'm Oliver Orange!  I'm here to squeeze the most out of this experience! Get it? Squeeze? ...Anyone?",
       "nextNodeId": "new_arrivals_2"
     },
     {
@@ -49,7 +49,7 @@
       ],
       "speakerId": "watermelon",
       "speakerEmotion": "confident",
-      "dialogueText": "I'm Wanda Watermelon. 🍉 And unlike some people, I'm here for serious connections. Not corny jokes.",
+      "dialogueText": "I'm Wanda Watermelon.  And unlike some people, I'm here for serious connections. Not corny jokes.",
       "nextNodeId": "new_arrivals_3"
     },
     {
@@ -61,7 +61,7 @@
       ],
       "speakerId": "pineapple",
       "speakerEmotion": "confident",
-      "dialogueText": "What's up, party people! Pete Pineapple in the house! 🍍 Who's ready to have the BEST time of their lives?!",
+      "dialogueText": "What's up, party people! Pete Pineapple in the house!  Who's ready to have the BEST time of their lives?!",
       "nextNodeId": "villa_reaction"
     },
     {
@@ -74,7 +74,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "worried",
-      "dialogueText": "Wait... more competition? I thought we already had enough people here! 😰",
+      "dialogueText": "Wait... more competition? I thought we already had enough people here! ",
       "nextNodeId": "villa_reaction_2"
     },
     {
@@ -112,7 +112,7 @@
       "dialogueText": "Oliver seems genuinely nice. What do you do?",
       "choices": [
         {
-          "choiceText": "Sure, I'd love to! 😊",
+          "choiceText": "Sure, I'd love to! ",
           "nextNodeId": "oliver_tour",
           "relationshipEffects": [
             {"characterId": "orange", "affectionChange": 15}
@@ -126,7 +126,7 @@
           ]
         },
         {
-          "choiceText": "💎 Tell a cheesy joke back",
+          "choiceText": " Tell a cheesy joke back",
           "nextNodeId": "oliver_joke",
           "isPremium": true,
           "heartsCost": 10,
@@ -180,7 +180,7 @@
       ],
       "speakerId": "orange",
       "speakerEmotion": "excited",
-      "dialogueText": "OH MY GOD. Finally! Someone who gets it!! 😂 I think I'm in love already! Where have you been all my life?!",
+      "dialogueText": "OH MY GOD. Finally! Someone who gets it!!  I think I'm in love already! Where have you been all my life?!",
       "nextNodeId": "wanda_drama"
     },
     {
@@ -206,7 +206,7 @@
       ],
       "speakerId": "grape",
       "speakerEmotion": "innocent",
-      "dialogueText": "I never said that. I said you seem... passionate. There's a difference. 🍇 But if the seed fits...",
+      "dialogueText": "I never said that. I said you seem... passionate. There's a difference.  But if the seed fits...",
       "nextNodeId": "wanda_choice"
     },
     {
@@ -266,7 +266,7 @@
       ],
       "speakerId": "grape",
       "speakerEmotion": "pleased",
-      "dialogueText": "Smart choice. Wanda needs to learn that not everything is a personal attack. Some of us are just... observant. 😏",
+      "dialogueText": "Smart choice. Wanda needs to learn that not everything is a personal attack. Some of us are just... observant. ",
       "nextNodeId": "coupling_announcement"
     },
     {
@@ -291,7 +291,7 @@
       ],
       "speakerId": "peach",
       "speakerEmotion": "excited",
-      "dialogueText": "Islanders! It's time for the FIRST COUPLING CEREMONY! 💕 Please gather at the firepit!",
+      "dialogueText": "Islanders! It's time for the FIRST COUPLING CEREMONY!  Please gather at the firepit!",
       "nextNodeId": "coupling_ceremony"
     },
     {
@@ -316,7 +316,7 @@
       "dialogueText": "It's your turn to choose. Who do you want to couple up with?",
       "choices": [
         {
-          "choiceText": "Brad 🍌 - The confident one",
+          "choiceText": "Brad  - The confident one",
           "nextNodeId": "couple_brad",
           "relationshipEffects": [
             {"characterId": "banana", "affectionChange": 25},
@@ -324,7 +324,7 @@
           ]
         },
         {
-          "choiceText": "Stella 🍓 - The sweet one",
+          "choiceText": "Stella  - The sweet one",
           "nextNodeId": "couple_stella",
           "relationshipEffects": [
             {"characterId": "strawberry", "affectionChange": 25},
@@ -332,14 +332,14 @@
           ]
         },
         {
-          "choiceText": "Oliver 🍊 - The funny one",
+          "choiceText": "Oliver  - The funny one",
           "nextNodeId": "couple_oliver",
           "relationshipEffects": [
             {"characterId": "orange", "affectionChange": 25}
           ]
         },
         {
-          "choiceText": "💎 Gigi 🍇 - The mysterious one",
+          "choiceText": " Gigi  - The mysterious one",
           "nextNodeId": "couple_gigi",
           "isPremium": true,
           "heartsCost": 20,
@@ -359,7 +359,7 @@
       ],
       "speakerId": "banana",
       "speakerEmotion": "pleased",
-      "dialogueText": "I was hoping you'd pick me. We're gonna be the power couple of this island. Just watch. 💪",
+      "dialogueText": "I was hoping you'd pick me. We're gonna be the power couple of this island. Just watch. ",
       "nextNodeId": "confessional_2"
     },
     {
@@ -371,7 +371,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "overjoyed",
-      "dialogueText": "EEEEK! Yes yes yes! I had the BEST feeling about you from the start! We're going to be the cutest couple! 🍓💕",
+      "dialogueText": "EEEEK! Yes yes yes! I had the BEST feeling about you from the start! We're going to be the cutest couple! ",
       "nextNodeId": "confessional_2"
     },
     {
@@ -383,7 +383,7 @@
       ],
       "speakerId": "orange",
       "speakerEmotion": "shocked_happy",
-      "dialogueText": "Wait, really?! You picked ME?! I... wow. I'm not used to being anyone's first choice. This means a lot. 🍊",
+      "dialogueText": "Wait, really?! You picked ME?! I... wow. I'm not used to being anyone's first choice. This means a lot. ",
       "nextNodeId": "confessional_2"
     },
     {
@@ -395,14 +395,14 @@
       ],
       "speakerId": "grape",
       "speakerEmotion": "intrigued",
-      "dialogueText": "Interesting choice. Most people are too intimidated to approach me. You've got layers. I like that. 🍇",
+      "dialogueText": "Interesting choice. Most people are too intimidated to approach me. You've got layers. I like that. ",
       "nextNodeId": "confessional_2"
     },
     {
       "nodeId": "confessional_2",
       "nodeType": "Confessional",
       "backgroundId": "confessional_booth",
-      "dialogueText": "🎬 CONFESSIONAL: Okay, first coupling done. But I can already see the drama brewing. Brad and Pete are definitely going to clash, Wanda has her eyes on SOMEONE (and it might be my partner?!), and Gigi... she's always watching. Always.",
+      "dialogueText": " CONFESSIONAL: Okay, first coupling done. But I can already see the drama brewing. Brad and Pete are definitely going to clash, Wanda has her eyes on SOMEONE (and it might be my partner?!), and Gigi... she's always watching. Always.",
       "nextNodeId": "ep2_cliffhanger"
     },
     {
@@ -414,14 +414,14 @@
       ],
       "speakerId": "peach",
       "speakerEmotion": "mischievous",
-      "dialogueText": "Oh, one more thing islanders... I have a TEXT! 📱 Tomorrow, a BOMBSHELL will be entering the villa. And they get to steal ANY partner they want!",
+      "dialogueText": "Oh, one more thing islanders... I have a TEXT!  Tomorrow, a BOMBSHELL will be entering the villa. And they get to steal ANY partner they want!",
       "nextNodeId": "ep2_end"
     },
     {
       "nodeId": "ep2_end",
       "nodeType": "EndEpisode",
       "backgroundId": "villa_night",
-      "dialogueText": "🌙 END OF EPISODE 2\n\nNext time on Fruit Love Island: A bombshell arrival threatens to tear couples apart! Plus: secret conversations, jealousy, and the first MAJOR fight!\n\n➡️ Continue to Episode 3"
+      "dialogueText": " END OF EPISODE 2\n\nNext time on Fruit Love Island: A bombshell arrival threatens to tear couples apart! Plus: secret conversations, jealousy, and the first MAJOR fight!\n\n Continue to Episode 3"
     }
   ]
 }

@@ -12,7 +12,7 @@
       ],
       "speakerId": "peach",
       "speakerEmotion": "excited",
-      "dialogueText": "Hello and welcome to FRUIT LOVE ISLAND! 🏝️ I'm Penny the Peach, your host for this juicy season of love!",
+      "dialogueText": "Hello and welcome to FRUIT LOVE ISLAND!  I'm Penny the Peach, your host for this juicy season of love!",
       "nextNodeId": "intro_2"
     },
     {
@@ -24,7 +24,7 @@
       ],
       "speakerId": "peach",
       "speakerEmotion": "happy",
-      "dialogueText": "This season, eight single fruits have come to this tropical paradise looking for one thing... LOVE! 💕",
+      "dialogueText": "This season, eight single fruits have come to this tropical paradise looking for one thing... LOVE! ",
       "nextNodeId": "intro_3"
     },
     {
@@ -36,7 +36,7 @@
       ],
       "speakerId": "peach",
       "speakerEmotion": "mischievous",
-      "dialogueText": "But here's the twist... YOU are our newest islander! And trust me, your arrival is about to shake things up! 😏",
+      "dialogueText": "But here's the twist... YOU are our newest islander! And trust me, your arrival is about to shake things up! ",
       "nextNodeId": "intro_4"
     },
     {
@@ -60,7 +60,7 @@
       ],
       "speakerId": "peach",
       "speakerEmotion": "wink",
-      "dialogueText": "But remember... in this game, your choices MATTER. Every decision shapes your journey. So choose wisely! 🎯",
+      "dialogueText": "But remember... in this game, your choices MATTER. Every decision shapes your journey. So choose wisely! ",
       "nextNodeId": "intro_6"
     },
     {
@@ -72,7 +72,7 @@
       ],
       "speakerId": "peach",
       "speakerEmotion": "excited",
-      "dialogueText": "Now then... let's get you inside and meet some of your fellow islanders! Good luck, sweetie! 🍑✨",
+      "dialogueText": "Now then... let's get you inside and meet some of your fellow islanders! Good luck, sweetie! ",
       "nextNodeId": "arrival_1"
     },
     {
@@ -102,7 +102,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "surprised",
-      "dialogueText": "Oh my gosh! OH MY GOSH! A new arrival! 😍",
+      "dialogueText": "Oh my gosh! OH MY GOSH! A new arrival! ",
       "nextNodeId": "meet_stella_2"
     },
     {
@@ -114,7 +114,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "happy",
-      "dialogueText": "Hi hi hi! I'm Stella! Stella the Strawberry! 🍓 Welcome to paradise, sweetie!",
+      "dialogueText": "Hi hi hi! I'm Stella! Stella the Strawberry!  Welcome to paradise, sweetie!",
       "nextNodeId": "meet_stella_3"
     },
     {
@@ -139,21 +139,21 @@
       "dialogueText": "Stella is staring at you with wide eyes. How do you respond?",
       "choices": [
         {
-          "choiceText": "\"Thanks! You're pretty stunning yourself!\" 😊",
+          "choiceText": "\"Thanks! You're pretty stunning yourself!\" ",
           "nextNodeId": "stella_flattered",
           "relationshipEffects": [
             {"characterId": "strawberry", "affectionChange": 10}
           ]
         },
         {
-          "choiceText": "\"So... what's the deal with this place?\" 🤔",
+          "choiceText": "\"So... what's the deal with this place?\" ",
           "nextNodeId": "stella_explain",
           "relationshipEffects": [
             {"characterId": "strawberry", "affectionChange": 5}
           ]
         },
         {
-          "choiceText": "\"Are there any cute guys here?\" 😏",
+          "choiceText": "\"Are there any cute guys here?\" ",
           "nextNodeId": "stella_gossip",
           "relationshipEffects": [
             {"characterId": "strawberry", "affectionChange": 8}
@@ -170,7 +170,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "blushing",
-      "dialogueText": "Oh stop it! 🙈 Okay no, don't stop, I love compliments! We're going to be BEST friends, I can tell already!",
+      "dialogueText": "Oh stop it!  Okay no, don't stop, I love compliments! We're going to be BEST friends, I can tell already!",
       "nextNodeId": "stella_about_1"
     },
     {
@@ -194,7 +194,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "mischievous",
-      "dialogueText": "Ooooh I like you already! 😈 Yes, there are definitely some cuties... but also some drama. I'll fill you in on EVERYTHING!",
+      "dialogueText": "Ooooh I like you already!  Yes, there are definitely some cuties... but also some drama. I'll fill you in on EVERYTHING!",
       "nextNodeId": "stella_about_1"
     },
     {
@@ -230,7 +230,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "nervous",
-      "dialogueText": "Plus... okay, don't laugh... but I've never actually been in a serious relationship. Like, ever. 🙈",
+      "dialogueText": "Plus... okay, don't laugh... but I've never actually been in a serious relationship. Like, ever. ",
       "nextNodeId": "stella_vulnerable_choice"
     },
     {
@@ -243,7 +243,7 @@
       "dialogueText": "Stella just shared something personal. How do you respond?",
       "choices": [
         {
-          "choiceText": "\"That's okay! The right person is worth waiting for.\" 💕",
+          "choiceText": "\"That's okay! The right person is worth waiting for.\" ",
           "nextNodeId": "stella_supported",
           "relationshipEffects": [
             {"characterId": "strawberry", "affectionChange": 15}
@@ -274,7 +274,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "touched",
-      "dialogueText": "You really think so? 🥺 That's... that's so sweet. Most people just tell me I'm too much. Thank you for saying that.",
+      "dialogueText": "You really think so?  That's... that's so sweet. Most people just tell me I'm too much. Thank you for saying that.",
       "nextNodeId": "brad_arrives"
     },
     {
@@ -324,7 +324,7 @@
       ],
       "speakerId": "banana",
       "speakerEmotion": "flirty",
-      "dialogueText": "I'm Brad. Brad Banana. 🍌 And I have a feeling you and I are going to get along VERY well.",
+      "dialogueText": "I'm Brad. Brad Banana.  And I have a feeling you and I are going to get along VERY well.",
       "nextNodeId": "stella_interrupts"
     },
     {
@@ -350,7 +350,7 @@
       ],
       "speakerId": "banana",
       "speakerEmotion": "dismissive",
-      "dialogueText": "Relax, Strawberry. I'm just being friendly. No need to get all territorial already. 😏",
+      "dialogueText": "Relax, Strawberry. I'm just being friendly. No need to get all territorial already. ",
       "nextNodeId": "tension_choice"
     },
     {
@@ -438,7 +438,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "reluctant",
-      "dialogueText": "...Fine. Truce. FOR NOW. 🙄",
+      "dialogueText": "...Fine. Truce. FOR NOW. ",
       "nextNodeId": "brad_recovers"
     },
     {
@@ -477,7 +477,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "surprised",
-      "dialogueText": "...Okay, that's actually the most real thing I've ever heard you say, Brad. 😳",
+      "dialogueText": "...Okay, that's actually the most real thing I've ever heard you say, Brad. ",
       "nextNodeId": "brad_about_3"
     },
     {
@@ -490,7 +490,7 @@
       ],
       "speakerId": "banana",
       "speakerEmotion": "wink",
-      "dialogueText": "See? I can be deep. I just save it for people who deserve it. 😏",
+      "dialogueText": "See? I can be deep. I just save it for people who deserve it. ",
       "nextNodeId": "brad_question"
     },
     {
@@ -541,7 +541,7 @@
           ]
         },
         {
-          "choiceText": "💎 \"Honestly? I'm here for the drama!\" 😈",
+          "choiceText": " \"Honestly? I'm here for the drama!\" ",
           "nextNodeId": "type_drama",
           "isPremium": true,
           "heartsCost": 10,
@@ -562,7 +562,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "hopeful",
-      "dialogueText": "That's so beautiful! Same here! I feel like we really understand each other already... 💕",
+      "dialogueText": "That's so beautiful! Same here! I feel like we really understand each other already... ",
       "nextNodeId": "tour_decision"
     },
     {
@@ -575,7 +575,7 @@
       ],
       "speakerId": "banana",
       "speakerEmotion": "smirking",
-      "dialogueText": "Now THAT'S what I like to hear. We're gonna get along just fine. 😏",
+      "dialogueText": "Now THAT'S what I like to hear. We're gonna get along just fine. ",
       "nextNodeId": "tour_decision"
     },
     {
@@ -614,7 +614,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "grinning",
-      "dialogueText": "Oh don't worry - there's PLENTY of drama already. You picked the right place! 😈",
+      "dialogueText": "Oh don't worry - there's PLENTY of drama already. You picked the right place! ",
       "nextNodeId": "tour_decision"
     },
     {
@@ -628,7 +628,7 @@
       "dialogueText": "Both islanders want to show you around. Who do you go with first?",
       "choices": [
         {
-          "choiceText": "Go with Stella 🍓",
+          "choiceText": "Go with Stella ",
           "nextNodeId": "tour_stella_1",
           "relationshipEffects": [
             {"characterId": "strawberry", "affectionChange": 10},
@@ -636,7 +636,7 @@
           ]
         },
         {
-          "choiceText": "Go with Brad 🍌",
+          "choiceText": "Go with Brad ",
           "nextNodeId": "tour_brad_1",
           "relationshipEffects": [
             {"characterId": "banana", "affectionChange": 10},
@@ -644,7 +644,7 @@
           ]
         },
         {
-          "choiceText": "💎 \"Why don't you BOTH show me around?\"",
+          "choiceText": " \"Why don't you BOTH show me around?\"",
           "nextNodeId": "tour_both",
           "isPremium": true,
           "heartsCost": 15,
@@ -664,7 +664,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "excited",
-      "dialogueText": "YAY! I knew you had taste! Come on, I'll show you everything. Brad can sulk somewhere else! 😊",
+      "dialogueText": "YAY! I knew you had taste! Come on, I'll show you everything. Brad can sulk somewhere else! ",
       "nextNodeId": "tour_stella_garden"
     },
     {
@@ -813,7 +813,7 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "offended",
-      "dialogueText": "BRAD! That was ONE time! And it was about the SHOW, not boys! 😤",
+      "dialogueText": "BRAD! That was ONE time! And it was about the SHOW, not boys! ",
       "nextNodeId": "meet_gigi"
     },
     {
@@ -857,7 +857,7 @@
       ],
       "speakerId": "grape",
       "speakerEmotion": "mysterious",
-      "dialogueText": "I'm Gigi. Gigi Grape. 🍇 And unlike the others, I don't need to fight for attention. I just... observe.",
+      "dialogueText": "I'm Gigi. Gigi Grape.  And unlike the others, I don't need to fight for attention. I just... observe.",
       "nextNodeId": "gigi_intro_3"
     },
     {
@@ -881,7 +881,7 @@
       ],
       "speakerId": "grape",
       "speakerEmotion": "cryptic",
-      "dialogueText": "But I see something else. Something... interesting. 🍇 We should talk more. Privately.",
+      "dialogueText": "But I see something else. Something... interesting.  We should talk more. Privately.",
       "nextNodeId": "gigi_choice"
     },
     {
@@ -894,7 +894,7 @@
       "dialogueText": "Gigi's energy is completely different from the others. What do you say?",
       "choices": [
         {
-          "choiceText": "\"You're pretty mysterious, aren't you?\" 🤔",
+          "choiceText": "\"You're pretty mysterious, aren't you?\" ",
           "nextNodeId": "gigi_mysterious",
           "relationshipEffects": [
             {"characterId": "grape", "affectionChange": 10}
@@ -957,7 +957,7 @@
       "nodeType": "Confessional",
       "backgroundId": "confessional_booth",
       "characters": [],
-      "dialogueText": "🎬 CONFESSIONAL: Okay, deep breath. First day in the villa and I've already met three very different people.",
+      "dialogueText": " CONFESSIONAL: Okay, deep breath. First day in the villa and I've already met three very different people.",
       "nextNodeId": "confessional_2"
     },
     {
@@ -981,7 +981,7 @@
       "nodeType": "Confessional",
       "backgroundId": "confessional_booth",
       "characters": [],
-      "dialogueText": "One thing's for sure - this summer is going to be WILD. I just hope I'm ready for it... 😳",
+      "dialogueText": "One thing's for sure - this summer is going to be WILD. I just hope I'm ready for it... ",
       "nextNodeId": "ep1_end"
     },
     {
@@ -989,7 +989,7 @@
       "nodeType": "EndEpisode",
       "backgroundId": "villa_night",
       "characters": [],
-      "dialogueText": "🌙 END OF EPISODE 1\n\nNext time on Fruit Love Island: New arrivals shake things up! The first coupling ceremony approaches! And one islander has a SECRET that could change everything...\n\n➡️ Continue to Episode 2"
+      "dialogueText": " END OF EPISODE 1\n\nNext time on Fruit Love Island: New arrivals shake things up! The first coupling ceremony approaches! And one islander has a SECRET that could change everything...\n\n Continue to Episode 2"
     }
   ]
 }
