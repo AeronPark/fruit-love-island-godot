@@ -137,10 +137,10 @@ func load_background(bg_id: String) -> void:
 @onready var character_container: Control = get_node("../CharacterContainer")
 var active_character_sprites: Dictionary = {}
 
-# Character sprite paths (v2 - transparent backgrounds)
+# Character sprite paths (v3 - fruit head style)
 var character_sprites: Dictionary = {
-	"strawberry": "res://assets/Art/Characters/v2/transparent/strawberry_v2_transparent.png",
-	"banana": "res://assets/Art/Characters/v2/transparent/banana_glamour_transparent.png",
+	"strawberry": "res://assets/Art/Characters/v3/strawberry_stella_final.png",
+	"banana": "res://assets/Art/Characters/v3/banana_brad_final.png",
 	"grape": "res://assets/Art/Characters/v2/transparent/grape_glamour_transparent.png",
 	"orange": "res://assets/Art/Characters/v2/transparent/orange_glamour_transparent.png",
 	"watermelon": "res://assets/Art/Characters/v2/transparent/watermelon_glamour_transparent.png",
