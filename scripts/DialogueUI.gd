@@ -149,6 +149,18 @@ var character_sprites: Dictionary = {
 	"cherry": "res://assets/Art/Characters/v2/transparent/cherry_v2_transparent.png"
 }
 
+# Per-character scale adjustments (1.0 = default)
+var character_scales: Dictionary = {
+	"strawberry": 0.9,
+	"banana": 1.0,
+	"grape": 1.0,
+	"orange": 1.0,
+	"watermelon": 1.0,
+	"mango": 1.0,
+	"pineapple": 1.0,
+	"cherry": 1.0
+}
+
 # Character expressions (override base when emotion specified)
 var character_expressions: Dictionary = {
 	"strawberry_sad": "res://assets/Art/Characters/expressions/strawberry_sad.png",
@@ -184,8 +196,9 @@ func update_characters(characters: Array) -> void:
 			
 			# Get viewport size for positioning
 			var viewport_size = get_viewport().get_visible_rect().size
-			var char_width = viewport_size.x * 0.7  # Larger characters
-			var char_height = viewport_size.y * 0.85
+			var scale_factor = character_scales.get(char_id, 1.0)
+			var char_width = viewport_size.x * 0.7 * scale_factor
+			var char_height = viewport_size.y * 0.85 * scale_factor
 			
 			# Set size
 			sprite.custom_minimum_size = Vector2(char_width, char_height)
