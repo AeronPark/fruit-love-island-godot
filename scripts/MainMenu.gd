@@ -1,6 +1,7 @@
 extends Control
 
 @onready var background: TextureRect = $Background
+@onready var logo: TextureRect = $Logo
 @onready var play_button: Button = $Content/PlayButton
 @onready var episodes_button: Button = $Content/EpisodesButton
 @onready var settings_button: Button = $Content/SettingsButton
@@ -25,13 +26,17 @@ func _ready() -> void:
 	_animate_entrance()
 
 func _animate_entrance() -> void:
-	# Fade in buttons
+	# Fade in logo and buttons
+	if logo:
+		logo.modulate.a = 0
 	play_button.modulate.a = 0
 	episodes_button.modulate.a = 0
 	settings_button.modulate.a = 0
 	
 	var tween = create_tween()
-	tween.tween_property(play_button, "modulate:a", 1.0, 0.3).set_delay(0.5)
+	if logo:
+		tween.tween_property(logo, "modulate:a", 1.0, 0.4).set_delay(0.2)
+	tween.tween_property(play_button, "modulate:a", 1.0, 0.3).set_delay(0.3)
 	tween.tween_property(episodes_button, "modulate:a", 1.0, 0.3).set_delay(0.1)
 	tween.tween_property(settings_button, "modulate:a", 1.0, 0.3).set_delay(0.1)
 
