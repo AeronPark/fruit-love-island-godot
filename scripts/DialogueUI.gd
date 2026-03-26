@@ -184,24 +184,24 @@ func update_characters(characters: Array) -> void:
 			
 			# Get viewport size for positioning
 			var viewport_size = get_viewport().get_visible_rect().size
-			var char_width = viewport_size.x * 0.45  # Smaller for side-by-side
-			var char_height = viewport_size.y * 0.65
+			var char_width = viewport_size.x * 0.7  # Larger characters
+			var char_height = viewport_size.y * 0.85
 			
 			# Set size
 			sprite.custom_minimum_size = Vector2(char_width, char_height)
 			sprite.size = Vector2(char_width, char_height)
 			
-			# Position based on Left/Center/Right - no overlap
+			# Position based on Left/Center/Right
 			var x_pos: float
 			match char_position:
 				"Left":
-					x_pos = viewport_size.x * 0.02
+					x_pos = viewport_size.x * -0.1
 				"Right":
-					x_pos = viewport_size.x * 0.53
+					x_pos = viewport_size.x * 0.4
 				_: # Center
-					x_pos = viewport_size.x * 0.275
+					x_pos = viewport_size.x * 0.15
 			
-			sprite.position = Vector2(x_pos, viewport_size.y * 0.32)
+			sprite.position = Vector2(x_pos, viewport_size.y * 0.12)
 			
 			# Full opacity for all characters (no dimming for now)
 			sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
