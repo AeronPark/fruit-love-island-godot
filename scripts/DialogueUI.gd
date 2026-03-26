@@ -114,14 +114,14 @@ func load_background(bg_id: String) -> void:
 	
 	# Map background IDs to image paths
 	var bg_paths: Dictionary = {
-		"villa_exterior": "res://assets/Art/Backgrounds/villa_exterior.png",
-		"villa_entrance": "res://assets/Art/Backgrounds/villa_exterior.png",
-		"villa_pool": "res://assets/Art/Backgrounds/Poolside_bg.png",
-		"villa_garden": "res://assets/Art/Backgrounds/villa_garden.png",
-		"villa_gym": "res://assets/Art/Backgrounds/villa_gym.png",
-		"villa_firepit": "res://assets/Art/Backgrounds/villa_firepit.png",
-		"villa_night": "res://assets/Art/Backgrounds/villa_night.png",
-		"confessional_booth": "res://assets/Art/Backgrounds/confessional_booth.png"
+		"villa_exterior": "res://assets/Art/Backgrounds/villa_exterior.jpg",
+		"villa_entrance": "res://assets/Art/Backgrounds/villa_exterior.jpg",
+		"villa_pool": "res://assets/Art/Backgrounds/villa_pool.jpg",
+		"villa_garden": "res://assets/Art/Backgrounds/villa_garden.jpg",
+		"villa_gym": "res://assets/Art/Backgrounds/villa_gym.jpg",
+		"villa_firepit": "res://assets/Art/Backgrounds/villa_firepit.jpg",
+		"villa_night": "res://assets/Art/Backgrounds/villa_night.jpg",
+		"confessional_booth": "res://assets/Art/Backgrounds/confessional_booth.jpg"
 	}
 	
 	var path = bg_paths.get(bg_id, "")
