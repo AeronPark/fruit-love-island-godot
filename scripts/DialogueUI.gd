@@ -185,20 +185,64 @@ var character_expressions: Dictionary = {
 }
 
 func update_characters(characters: Array) -> void:
-	# Clear existing characters immediately
-	for child in character_container.get_children():
-		child.queue_free()
-	active_character_sprites.clear()
+	var viewport_size = get_viewport().get_visible_rect().size
 	
-	# Add new character sprites with slide in
-	var delay = 0.15
+	# Build list of new character IDs
+	var new_char_ids: Array = []
+	var new_char_data: Dictionary = {}
+	for char_data in characters:
+		var char_id = char_data.get("characterId", "")
+		new_char_ids.append(char_id)
+		new_char_data[char_id] = char_data
+	
+	# Slide out characters that are leaving
+	var chars_to_remove: Array = []
+	for char_id in active_character_sprites.keys():
+		if char_id not in new_char_ids:
+			chars_to_remove.append(char_id)
+			var sprite = active_character_sprites[char_id]
+			slide_out_character(sprite, viewport_size)
+	
+	# Remove from tracking (sprite will be freed after animation)
+	for char_id in chars_to_remove:
+		active_character_sprites.erase(char_id)
+	
+	# Add/update characters
+	var slide_delay = 0.0
 	for char_data in characters:
 		var char_id = char_data.get("characterId", "")
 		var char_position = char_data.get("position", "Center")
 		var is_highlighted = char_data.get("isHighlighted", false)
 		var emotion = char_data.get("emotion", "neutral")
 		
-		if character_sprites.has(char_id):
+		if not character_sprites.has(char_id):
+			continue
+		
+		# Calculate target position
+		var scale_factor = character_scales.get(char_id, 1.0)
+		var char_width = viewport_size.x * 0.7 * scale_factor
+		var char_height = viewport_size.y * 0.85 * scale_factor
+		
+		var target_x: float
+		match char_position:
+			"Left":
+				target_x = viewport_size.x * -0.1
+			"Right":
+				target_x = viewport_size.x * 0.4
+			_: # Center
+				target_x = viewport_size.x * 0.15
+		
+		var target_pos = Vector2(target_x, viewport_size.y * 0.22)
+		
+		# Check if character already exists
+		if active_character_sprites.has(char_id):
+			# Character already on screen - just update position if needed
+			var sprite = active_character_sprites[char_id]
+			if sprite.position != target_pos:
+				var tween = create_tween()
+				tween.tween_property(sprite, "position", target_pos, 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+		else:
+			# New character - create and slide in
 			var sprite = TextureRect.new()
 			
 			# Check for expression variant first
@@ -210,33 +254,42 @@ func update_characters(characters: Array) -> void:
 			sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			
-			# Get viewport size for positioning
-			var viewport_size = get_viewport().get_visible_rect().size
-			var scale_factor = character_scales.get(char_id, 1.0)
-			var char_width = viewport_size.x * 0.7 * scale_factor
-			var char_height = viewport_size.y * 0.85 * scale_factor
-			
 			# Set size
 			sprite.custom_minimum_size = Vector2(char_width, char_height)
 			sprite.size = Vector2(char_width, char_height)
 			
-			# Position based on Left/Center/Right
-			var x_pos: float
+			# Start position (off-screen based on target position)
+			var start_x: float
 			match char_position:
 				"Left":
-					x_pos = viewport_size.x * -0.1
+					start_x = -char_width  # Slide in from left
 				"Right":
-					x_pos = viewport_size.x * 0.4
+					start_x = viewport_size.x + char_width  # Slide in from right
 				_: # Center
-					x_pos = viewport_size.x * 0.15
+					start_x = viewport_size.x + char_width  # Slide in from right
 			
-			sprite.position = Vector2(x_pos, viewport_size.y * 0.22)
-			
-			# Full opacity for all characters (no dimming for now)
+			sprite.position = Vector2(start_x, target_pos.y)
 			sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			
 			character_container.add_child(sprite)
 			active_character_sprites[char_id] = sprite
+			
+			# Animate slide in
+			var tween = create_tween()
+			tween.tween_property(sprite, "position", target_pos, 0.4).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_delay(slide_delay)
+			slide_delay += 0.1
+
+func slide_out_character(sprite: TextureRect, viewport_size: Vector2) -> void:
+	# Determine exit direction based on current position
+	var exit_x: float
+	if sprite.position.x < viewport_size.x * 0.25:
+		exit_x = -sprite.size.x  # Exit left
+	else:
+		exit_x = viewport_size.x + sprite.size.x  # Exit right
+	
+	var tween = create_tween()
+	tween.tween_property(sprite, "position:x", exit_x, 0.3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+	tween.tween_callback(sprite.queue_free)
 
 func start_typewriter(text: String) -> void:
 	full_text = text
