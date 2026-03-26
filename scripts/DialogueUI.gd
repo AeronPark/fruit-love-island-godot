@@ -137,16 +137,16 @@ func load_background(bg_id: String) -> void:
 @onready var character_container: Control = get_node("../CharacterContainer")
 var active_character_sprites: Dictionary = {}
 
-# Character sprite paths (v2 - viral style)
+# Character sprite paths (v2 - viral style with muted tones)
 var character_sprites: Dictionary = {
-	"strawberry": "res://assets/Art/Characters/v2/strawberry_glamour.png",
+	"strawberry": "res://assets/Art/Characters/v2/strawberry_v2.png",
 	"banana": "res://assets/Art/Characters/v2/banana_glamour.png",
 	"grape": "res://assets/Art/Characters/v2/grape_glamour.png",
 	"orange": "res://assets/Art/Characters/v2/orange_glamour.png",
 	"watermelon": "res://assets/Art/Characters/v2/watermelon_glamour.png",
 	"mango": "res://assets/Art/Characters/v2/mango_glamour.png",
 	"pineapple": "res://assets/Art/Characters/v2/pineapple_glamour.png",
-	"cherry": "res://assets/Art/Characters/v2/cherry_twins_glamour.png"
+	"cherry": "res://assets/Art/Characters/v2/cherry_v2.png"
 }
 
 # Character expressions (override base when emotion specified)
@@ -157,12 +157,16 @@ var character_expressions: Dictionary = {
 }
 
 func update_characters(characters: Array) -> void:
-	# Clear existing character sprites
+	# Slide out existing characters
 	for child in character_container.get_children():
-		child.queue_free()
+		var tween = create_tween()
+		tween.tween_property(child, "position:x", child.position.x - 200, 0.2)
+		tween.parallel().tween_property(child, "modulate:a", 0.0, 0.2)
+		tween.tween_callback(child.queue_free)
 	active_character_sprites.clear()
 	
-	# Add new character sprites
+	# Add new character sprites with slide in
+	var delay = 0.15
 	for char_data in characters:
 		var char_id = char_data.get("characterId", "")
 		var char_position = char_data.get("position", "Center")
@@ -206,6 +210,15 @@ func update_characters(characters: Array) -> void:
 			
 			character_container.add_child(sprite)
 			active_character_sprites[char_id] = sprite
+			
+			# Slide in animation
+			var start_x = 300.0 if char_position == "Right" else -300.0
+			sprite.position.x = start_x
+			sprite.modulate.a = 0.0
+			var tween = create_tween()
+			tween.tween_property(sprite, "position:x", 0.0, 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_delay(delay)
+			tween.parallel().tween_property(sprite, "modulate:a", 1.0 if is_highlighted else 0.6, 0.3).set_delay(delay)
+			delay += 0.1
 
 func start_typewriter(text: String) -> void:
 	full_text = text
