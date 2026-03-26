@@ -85,7 +85,20 @@ func _on_node_changed(node: Dictionary) -> void:
 		load_background(bg_id)
 	
 	# Update characters on screen
-	update_characters(node.get("characters", []))
+	var characters = node.get("characters", [])
+	
+	# Always show Gigi in confessional booth
+	if bg_id == "confessional_booth" or (bg_id == "" and current_bg_id == "confessional_booth"):
+		var has_gigi = false
+		for c in characters:
+			if c.get("characterId", "") == "grape":
+				has_gigi = true
+				break
+		if not has_gigi:
+			characters = characters.duplicate()
+			characters.append({"characterId": "grape", "position": "Center", "isHighlighted": true})
+	
+	update_characters(characters)
 	
 	# Update speaker
 	var speaker_id = node.get("speakerId", "")
