@@ -8,11 +8,11 @@
       "nodeType": "Dialogue",
       "backgroundId": "villa_exterior",
       "characters": [
-        {"characterId": "peach", "position": "Center", "emotion": "happy", "isHighlighted": true}
+        {"characterId": "peach", "position": "Center", "emotion": "excited", "isHighlighted": true}
       ],
       "speakerId": "peach",
-      "speakerEmotion": "happy",
-      "dialogueText": "Welcome to Fruit Love Island! 🏝️ This season, 8 single fruits are looking for love. Will they find their perfect match?",
+      "speakerEmotion": "excited",
+      "dialogueText": "Hello and welcome to FRUIT LOVE ISLAND! 🏝️ I'm Penny the Peach, your host for this juicy season of love!",
       "nextNodeId": "intro_2"
     },
     {
@@ -20,15 +20,93 @@
       "nodeType": "Dialogue",
       "backgroundId": "villa_exterior",
       "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "happy", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "happy",
+      "dialogueText": "This season, eight single fruits have come to this tropical paradise looking for one thing... LOVE! 💕",
+      "nextNodeId": "intro_3"
+    },
+    {
+      "nodeId": "intro_3",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "mischievous", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "mischievous",
+      "dialogueText": "But here's the twist... YOU are our newest islander! And trust me, your arrival is about to shake things up! 😏",
+      "nextNodeId": "intro_4"
+    },
+    {
+      "nodeId": "intro_4",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "serious", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "serious",
+      "dialogueText": "The rules are simple: couple up, stay together, and don't get dumped. At the end of the summer, ONE couple will win the grand prize!",
+      "nextNodeId": "intro_5"
+    },
+    {
+      "nodeId": "intro_5",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
+        {"characterId": "peach", "position": "Center", "emotion": "wink", "isHighlighted": true}
+      ],
+      "speakerId": "peach",
+      "speakerEmotion": "wink",
+      "dialogueText": "But remember... in this game, your choices MATTER. Every decision shapes your journey. So choose wisely! 🎯",
+      "nextNodeId": "intro_6"
+    },
+    {
+      "nodeId": "intro_6",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_exterior",
+      "characters": [
         {"characterId": "peach", "position": "Center", "emotion": "excited", "isHighlighted": true}
       ],
       "speakerId": "peach",
       "speakerEmotion": "excited",
-      "dialogueText": "As the new arrival, YOU have the power to shake things up. Choose wisely... your decisions will determine your fate!",
+      "dialogueText": "Now then... let's get you inside and meet some of your fellow islanders! Good luck, sweetie! 🍑✨",
       "nextNodeId": "arrival_1"
     },
     {
       "nodeId": "arrival_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [],
+      "speakerId": "",
+      "dialogueText": "You walk down the beautiful stone path toward the villa. The tropical flowers smell incredible, and you can hear laughter in the distance...",
+      "nextNodeId": "arrival_2"
+    },
+    {
+      "nodeId": "arrival_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [],
+      "speakerId": "",
+      "dialogueText": "Your heart is racing. This is it. The start of something that could change your life forever...",
+      "nextNodeId": "meet_stella_1"
+    },
+    {
+      "nodeId": "meet_stella_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "surprised", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "surprised",
+      "dialogueText": "Oh my gosh! OH MY GOSH! A new arrival! 😍",
+      "nextNodeId": "meet_stella_2"
+    },
+    {
+      "nodeId": "meet_stella_2",
       "nodeType": "Dialogue",
       "backgroundId": "villa_path",
       "characters": [
@@ -36,53 +114,274 @@
       ],
       "speakerId": "strawberry",
       "speakerEmotion": "happy",
-      "dialogueText": "OMG! A new arrival! I'm Stella the Strawberry. Welcome to paradise, sweetie! 🍓",
-      "nextNodeId": "arrival_2"
+      "dialogueText": "Hi hi hi! I'm Stella! Stella the Strawberry! 🍓 Welcome to paradise, sweetie!",
+      "nextNodeId": "meet_stella_3"
     },
     {
-      "nodeId": "arrival_2",
+      "nodeId": "meet_stella_3",
       "nodeType": "Dialogue",
       "backgroundId": "villa_path",
       "characters": [
-        {"characterId": "strawberry", "position": "Left", "emotion": "neutral", "isHighlighted": false},
+        {"characterId": "strawberry", "position": "Center", "emotion": "curious", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "curious",
+      "dialogueText": "Wait, let me look at you... Wow. Just wow. The others are NOT going to believe this!",
+      "nextNodeId": "stella_react_choice"
+    },
+    {
+      "nodeId": "stella_react_choice",
+      "nodeType": "Choice",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "excited", "isHighlighted": true}
+      ],
+      "dialogueText": "Stella is staring at you with wide eyes. How do you respond?",
+      "choices": [
+        {
+          "choiceText": "\"Thanks! You're pretty stunning yourself!\" 😊",
+          "nextNodeId": "stella_flattered",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 10}
+          ]
+        },
+        {
+          "choiceText": "\"So... what's the deal with this place?\" 🤔",
+          "nextNodeId": "stella_explain",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 5}
+          ]
+        },
+        {
+          "choiceText": "\"Are there any cute guys here?\" 😏",
+          "nextNodeId": "stella_gossip",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 8}
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "stella_flattered",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "blushing", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "blushing",
+      "dialogueText": "Oh stop it! 🙈 Okay no, don't stop, I love compliments! We're going to be BEST friends, I can tell already!",
+      "nextNodeId": "stella_about_1"
+    },
+    {
+      "nodeId": "stella_explain",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "thoughtful", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "thoughtful",
+      "dialogueText": "Oh right, you just got here! So basically we all live in this gorgeous villa, couple up, and try not to get kicked off! Easy peasy!",
+      "nextNodeId": "stella_about_1"
+    },
+    {
+      "nodeId": "stella_gossip",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "mischievous", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "mischievous",
+      "dialogueText": "Ooooh I like you already! 😈 Yes, there are definitely some cuties... but also some drama. I'll fill you in on EVERYTHING!",
+      "nextNodeId": "stella_about_1"
+    },
+    {
+      "nodeId": "stella_about_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "happy", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "happy",
+      "dialogueText": "Okay so about me - I'm 24, I'm a social media manager back home, and I'm here because I'm TIRED of dating apps!",
+      "nextNodeId": "stella_about_2"
+    },
+    {
+      "nodeId": "stella_about_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "determined", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "determined",
+      "dialogueText": "I want something REAL, you know? A genuine connection. Someone who sees the real me, not just my Instagram!",
+      "nextNodeId": "stella_about_3"
+    },
+    {
+      "nodeId": "stella_about_3",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "nervous", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "nervous",
+      "dialogueText": "Plus... okay, don't laugh... but I've never actually been in a serious relationship. Like, ever. 🙈",
+      "nextNodeId": "stella_vulnerable_choice"
+    },
+    {
+      "nodeId": "stella_vulnerable_choice",
+      "nodeType": "Choice",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "nervous", "isHighlighted": true}
+      ],
+      "dialogueText": "Stella just shared something personal. How do you respond?",
+      "choices": [
+        {
+          "choiceText": "\"That's okay! The right person is worth waiting for.\" 💕",
+          "nextNodeId": "stella_supported",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 15}
+          ]
+        },
+        {
+          "choiceText": "\"Really? You seem like you'd have tons of options!\"",
+          "nextNodeId": "stella_complimented",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 10}
+          ]
+        },
+        {
+          "choiceText": "\"Maybe you're just too picky?\" 🤷",
+          "nextNodeId": "stella_offended",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": -10}
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "stella_supported",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "touched", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "touched",
+      "dialogueText": "You really think so? 🥺 That's... that's so sweet. Most people just tell me I'm too much. Thank you for saying that.",
+      "nextNodeId": "brad_arrives"
+    },
+    {
+      "nodeId": "stella_complimented",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "flattered", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "flattered",
+      "dialogueText": "Aww, you're so sweet! I mean, I've had INTEREST, but no one who really got me, you know? Anyway - OH! Speaking of options...",
+      "nextNodeId": "brad_arrives"
+    },
+    {
+      "nodeId": "stella_offended",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "hurt", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "hurt",
+      "dialogueText": "Wow. Okay. I mean... maybe I just have STANDARDS? Not everyone settles for the first thing that comes along... Anyway, whatever.",
+      "nextNodeId": "brad_arrives"
+    },
+    {
+      "nodeId": "brad_arrives",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "eyeroll", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "confident", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "confident",
+      "dialogueText": "Well, well, well... What do we have here? Stella, were you trying to keep this one all to yourself?",
+      "nextNodeId": "brad_intro_1"
+    },
+    {
+      "nodeId": "brad_intro_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "annoyed", "isHighlighted": false},
         {"characterId": "banana", "position": "Right", "emotion": "flirty", "isHighlighted": true}
       ],
       "speakerId": "banana",
       "speakerEmotion": "flirty",
-      "dialogueText": "Well, well, well... looks like things just got a lot more interesting around here. I'm Brad. Brad Banana. 🍌",
-      "nextNodeId": "first_choice"
+      "dialogueText": "I'm Brad. Brad Banana. 🍌 And I have a feeling you and I are going to get along VERY well.",
+      "nextNodeId": "stella_interrupts"
     },
     {
-      "nodeId": "first_choice",
+      "nodeId": "stella_interrupts",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "defensive", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "smug", "isHighlighted": false}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "defensive",
+      "dialogueText": "Actually, WE were having a really nice conversation before you interrupted, Brad. As usual.",
+      "nextNodeId": "brad_response"
+    },
+    {
+      "nodeId": "brad_response",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "annoyed", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "dismissive", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "dismissive",
+      "dialogueText": "Relax, Strawberry. I'm just being friendly. No need to get all territorial already. 😏",
+      "nextNodeId": "tension_choice"
+    },
+    {
+      "nodeId": "tension_choice",
       "nodeType": "Choice",
       "backgroundId": "villa_path",
       "characters": [
-        {"characterId": "strawberry", "position": "Left", "emotion": "curious", "isHighlighted": true},
-        {"characterId": "banana", "position": "Right", "emotion": "flirty", "isHighlighted": true}
+        {"characterId": "strawberry", "position": "Left", "emotion": "upset", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "smug", "isHighlighted": true}
       ],
-      "dialogueText": "Both fruits are looking at you expectantly. Who do you want to talk to first?",
+      "dialogueText": "There's definitely some tension here. What do you do?",
       "choices": [
         {
-          "choiceText": "Chat with Stella 🍓",
-          "nextNodeId": "stella_chat_1",
+          "choiceText": "Side with Stella: \"She WAS here first...\"",
+          "nextNodeId": "side_stella",
           "relationshipEffects": [
-            {"characterId": "strawberry", "affectionChange": 10},
-            {"characterId": "banana", "affectionChange": -5}
+            {"characterId": "strawberry", "affectionChange": 15},
+            {"characterId": "banana", "affectionChange": -10}
           ]
         },
         {
-          "choiceText": "Talk to Brad 🍌",
-          "nextNodeId": "brad_chat_1",
+          "choiceText": "Side with Brad: \"I don't mind meeting new people!\"",
+          "nextNodeId": "side_brad",
           "relationshipEffects": [
-            {"characterId": "banana", "affectionChange": 10},
-            {"characterId": "strawberry", "affectionChange": -5}
+            {"characterId": "banana", "affectionChange": 15},
+            {"characterId": "strawberry", "affectionChange": -10}
           ]
         },
         {
-          "choiceText": "💎 Flirt with both at once",
-          "nextNodeId": "flirt_both",
-          "isPremium": true,
-          "heartsCost": 15,
+          "choiceText": "Stay neutral: \"Can we all just... chill?\"",
+          "nextNodeId": "stay_neutral",
           "relationshipEffects": [
             {"characterId": "strawberry", "affectionChange": 5},
             {"characterId": "banana", "affectionChange": 5}
@@ -91,80 +390,466 @@
       ]
     },
     {
-      "nodeId": "stella_chat_1",
+      "nodeId": "side_stella",
       "nodeType": "Dialogue",
       "backgroundId": "villa_path",
       "characters": [
-        {"characterId": "strawberry", "position": "Center", "emotion": "happy", "isHighlighted": true}
+        {"characterId": "strawberry", "position": "Left", "emotion": "grateful", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "surprised", "isHighlighted": false}
       ],
       "speakerId": "strawberry",
-      "speakerEmotion": "happy",
-      "dialogueText": "I knew you had good taste! Come on, let me show you around. Brad can wait. 😏",
-      "nextNodeId": "stella_chat_2"
+      "speakerEmotion": "grateful",
+      "dialogueText": "THANK you! See, Brad? Some people have MANNERS!",
+      "nextNodeId": "brad_recovers"
     },
     {
-      "nodeId": "stella_chat_2",
+      "nodeId": "side_brad",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "hurt", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "pleased", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "pleased",
+      "dialogueText": "See? Open-minded. I like that. Stella could learn a thing or two from you.",
+      "nextNodeId": "brad_recovers"
+    },
+    {
+      "nodeId": "stay_neutral",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "sheepish", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "amused", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "amused",
+      "dialogueText": "Ha! A peacemaker. Alright, fair enough. Truce, Stella?",
+      "nextNodeId": "stella_truce"
+    },
+    {
+      "nodeId": "stella_truce",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "reluctant", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "waiting", "isHighlighted": false}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "reluctant",
+      "dialogueText": "...Fine. Truce. FOR NOW. 🙄",
+      "nextNodeId": "brad_recovers"
+    },
+    {
+      "nodeId": "brad_recovers",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "neutral", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "charming", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "charming",
+      "dialogueText": "Anyway, let me tell you about myself. I'm 26, I work as a personal trainer, and I came here because... honestly?",
+      "nextNodeId": "brad_about_1"
+    },
+    {
+      "nodeId": "brad_about_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "skeptical", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "sincere", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "sincere",
+      "dialogueText": "I'm tired of people only seeing the surface. They see the muscles and assume I'm just some dumb gym bro. But there's more to me than that.",
+      "nextNodeId": "brad_about_2"
+    },
+    {
+      "nodeId": "brad_about_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "surprised", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "vulnerable", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "surprised",
+      "dialogueText": "...Okay, that's actually the most real thing I've ever heard you say, Brad. 😳",
+      "nextNodeId": "brad_about_3"
+    },
+    {
+      "nodeId": "brad_about_3",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "neutral", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "wink", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "wink",
+      "dialogueText": "See? I can be deep. I just save it for people who deserve it. 😏",
+      "nextNodeId": "brad_question"
+    },
+    {
+      "nodeId": "brad_question",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "curious", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "interested", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "interested",
+      "dialogueText": "So what about you? What's your type? What are you looking for in here?",
+      "nextNodeId": "type_choice"
+    },
+    {
+      "nodeId": "type_choice",
+      "nodeType": "Choice",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "listening", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "interested", "isHighlighted": true}
+      ],
+      "dialogueText": "Both Stella and Brad are listening intently. What do you say?",
+      "choices": [
+        {
+          "choiceText": "\"Someone sweet and genuine.\" (Stella vibes)",
+          "nextNodeId": "type_sweet",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 12},
+            {"characterId": "banana", "affectionChange": -5}
+          ]
+        },
+        {
+          "choiceText": "\"Someone confident who knows what they want.\" (Brad vibes)",
+          "nextNodeId": "type_confident",
+          "relationshipEffects": [
+            {"characterId": "banana", "affectionChange": 12},
+            {"characterId": "strawberry", "affectionChange": -5}
+          ]
+        },
+        {
+          "choiceText": "\"I'm open to anything! Love finds you, right?\"",
+          "nextNodeId": "type_open",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 5},
+            {"characterId": "banana", "affectionChange": 5}
+          ]
+        },
+        {
+          "choiceText": "💎 \"Honestly? I'm here for the drama!\" 😈",
+          "nextNodeId": "type_drama",
+          "isPremium": true,
+          "heartsCost": 10,
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 8},
+            {"characterId": "banana", "affectionChange": 10}
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "type_sweet",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "hopeful", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "disappointed", "isHighlighted": false}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "hopeful",
+      "dialogueText": "That's so beautiful! Same here! I feel like we really understand each other already... 💕",
+      "nextNodeId": "tour_decision"
+    },
+    {
+      "nodeId": "type_confident",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "deflated", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "smirking", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "smirking",
+      "dialogueText": "Now THAT'S what I like to hear. We're gonna get along just fine. 😏",
+      "nextNodeId": "tour_decision"
+    },
+    {
+      "nodeId": "type_open",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "nodding", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "approving", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "approving",
+      "dialogueText": "A romantic AND a realist. Interesting combination. I can work with that.",
+      "nextNodeId": "tour_decision"
+    },
+    {
+      "nodeId": "type_drama",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "laughing", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "laughing", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "laughing",
+      "dialogueText": "HA! Okay I didn't expect that! I respect the honesty. This is gonna be FUN.",
+      "nextNodeId": "type_drama_2"
+    },
+    {
+      "nodeId": "type_drama_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "grinning", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "amused", "isHighlighted": false}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "grinning",
+      "dialogueText": "Oh don't worry - there's PLENTY of drama already. You picked the right place! 😈",
+      "nextNodeId": "tour_decision"
+    },
+    {
+      "nodeId": "tour_decision",
+      "nodeType": "Choice",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "eager", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "eager", "isHighlighted": true}
+      ],
+      "dialogueText": "Both islanders want to show you around. Who do you go with first?",
+      "choices": [
+        {
+          "choiceText": "Go with Stella 🍓",
+          "nextNodeId": "tour_stella_1",
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 10},
+            {"characterId": "banana", "affectionChange": -5}
+          ]
+        },
+        {
+          "choiceText": "Go with Brad 🍌",
+          "nextNodeId": "tour_brad_1",
+          "relationshipEffects": [
+            {"characterId": "banana", "affectionChange": 10},
+            {"characterId": "strawberry", "affectionChange": -5}
+          ]
+        },
+        {
+          "choiceText": "💎 \"Why don't you BOTH show me around?\"",
+          "nextNodeId": "tour_both",
+          "isPremium": true,
+          "heartsCost": 15,
+          "relationshipEffects": [
+            {"characterId": "strawberry", "affectionChange": 8},
+            {"characterId": "banana", "affectionChange": 8}
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "tour_stella_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "excited", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "excited",
+      "dialogueText": "YAY! I knew you had taste! Come on, I'll show you everything. Brad can sulk somewhere else! 😊",
+      "nextNodeId": "tour_stella_garden"
+    },
+    {
+      "nodeId": "tour_stella_garden",
       "nodeType": "Dialogue",
       "backgroundId": "villa_garden",
       "characters": [
-        {"characterId": "strawberry", "position": "Center", "emotion": "neutral", "isHighlighted": true}
+        {"characterId": "strawberry", "position": "Center", "emotion": "peaceful", "isHighlighted": true}
       ],
       "speakerId": "strawberry",
-      "speakerEmotion": "neutral",
-      "dialogueText": "So tell me... what's your type? I need to know if we're going to be besties or... something more. 💕",
-      "nextNodeId": "meet_grape"
+      "speakerEmotion": "peaceful",
+      "dialogueText": "This is the garden. It's my favorite spot. When the drama gets too much, I come here to think.",
+      "nextNodeId": "tour_stella_garden_2"
     },
     {
-      "nodeId": "brad_chat_1",
+      "nodeId": "tour_stella_garden_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "sincere", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "sincere",
+      "dialogueText": "Can I be real with you? I'm actually really nervous. Everyone here seems to have it all figured out, but I'm just... trying my best.",
+      "nextNodeId": "tour_stella_garden_3"
+    },
+    {
+      "nodeId": "tour_stella_garden_3",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "strawberry", "position": "Center", "emotion": "hopeful", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "hopeful",
+      "dialogueText": "I really hope I find someone here. Someone who sees ME, not just the bubbly persona I put on. Does that make sense?",
+      "nextNodeId": "meet_gigi"
+    },
+    {
+      "nodeId": "tour_brad_1",
       "nodeType": "Dialogue",
       "backgroundId": "villa_path",
       "characters": [
-        {"characterId": "banana", "position": "Center", "emotion": "confident", "isHighlighted": true}
+        {"characterId": "banana", "position": "Center", "emotion": "smug", "isHighlighted": true}
       ],
       "speakerId": "banana",
-      "speakerEmotion": "confident",
-      "dialogueText": "Smart choice. Stella's sweet, but she's all sugar, no substance. Come with me, I'll give you the REAL tour.",
-      "nextNodeId": "brad_chat_2"
+      "speakerEmotion": "smug",
+      "dialogueText": "Smart choice. Stella's sweet, but she can be... a lot. Come on, I'll give you the REAL tour.",
+      "nextNodeId": "tour_brad_gym"
     },
     {
-      "nodeId": "brad_chat_2",
+      "nodeId": "tour_brad_gym",
       "nodeType": "Dialogue",
       "backgroundId": "villa_gym",
       "characters": [
-        {"characterId": "banana", "position": "Center", "emotion": "flirty", "isHighlighted": true}
+        {"characterId": "banana", "position": "Center", "emotion": "proud", "isHighlighted": true}
       ],
       "speakerId": "banana",
-      "speakerEmotion": "flirty",
-      "dialogueText": "This is where I spend most of my time. Gotta stay in shape, you know? So... you work out?",
-      "nextNodeId": "meet_grape"
+      "speakerEmotion": "proud",
+      "dialogueText": "This is the gym. My domain. Nothing clears my head better than a good workout.",
+      "nextNodeId": "tour_brad_gym_2"
     },
     {
-      "nodeId": "flirt_both",
+      "nodeId": "tour_brad_gym_2",
       "nodeType": "Dialogue",
-      "backgroundId": "villa_path",
+      "backgroundId": "villa_gym",
       "characters": [
-        {"characterId": "strawberry", "position": "Left", "emotion": "shocked", "isHighlighted": true},
-        {"characterId": "banana", "position": "Right", "emotion": "shocked", "isHighlighted": true}
+        {"characterId": "banana", "position": "Center", "emotion": "thoughtful", "isHighlighted": true}
       ],
-      "speakerId": "",
-      "dialogueText": "You flash a charming smile and wink at both of them. \"Why choose when I can have both of you show me around?\"",
-      "nextNodeId": "flirt_both_2"
+      "speakerId": "banana",
+      "speakerEmotion": "thoughtful",
+      "dialogueText": "Look... I know I come across as arrogant sometimes. But it's just confidence. There's a difference.",
+      "nextNodeId": "tour_brad_gym_3"
     },
     {
-      "nodeId": "flirt_both_2",
+      "nodeId": "tour_brad_gym_3",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_gym",
+      "characters": [
+        {"characterId": "banana", "position": "Center", "emotion": "serious", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "serious",
+      "dialogueText": "I grew up being told I wasn't good enough. So yeah, I learned to believe in myself. Is that so wrong?",
+      "nextNodeId": "meet_gigi"
+    },
+    {
+      "nodeId": "tour_both",
       "nodeType": "Dialogue",
       "backgroundId": "villa_path",
       "characters": [
-        {"characterId": "strawberry", "position": "Left", "emotion": "happy", "isHighlighted": true},
+        {"characterId": "strawberry", "position": "Left", "emotion": "surprised", "isHighlighted": true},
         {"characterId": "banana", "position": "Right", "emotion": "impressed", "isHighlighted": true}
       ],
       "speakerId": "banana",
       "speakerEmotion": "impressed",
-      "dialogueText": "Ha! I like you already. You've got confidence. This is going to be a fun season.",
-      "nextNodeId": "meet_grape"
+      "dialogueText": "Ha! Bold move. I like it. Alright Stella, truce for real this time?",
+      "nextNodeId": "tour_both_2"
     },
     {
-      "nodeId": "meet_grape",
+      "nodeId": "tour_both_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_path",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "agreeing", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "friendly", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "agreeing",
+      "dialogueText": "Fine! But only because they asked nicely. Let's show them the WHOLE villa!",
+      "nextNodeId": "tour_both_garden"
+    },
+    {
+      "nodeId": "tour_both_garden",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "happy", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "neutral", "isHighlighted": false}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "happy",
+      "dialogueText": "This is the garden! My favorite spot. Isn't it gorgeous?",
+      "nextNodeId": "tour_both_garden_2"
+    },
+    {
+      "nodeId": "tour_both_garden_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "neutral", "isHighlighted": false},
+        {"characterId": "banana", "position": "Right", "emotion": "teasing", "isHighlighted": true}
+      ],
+      "speakerId": "banana",
+      "speakerEmotion": "teasing",
+      "dialogueText": "She comes here to write in her diary and cry about boys. Very romantic.",
+      "nextNodeId": "tour_both_garden_3"
+    },
+    {
+      "nodeId": "tour_both_garden_3",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_garden",
+      "characters": [
+        {"characterId": "strawberry", "position": "Left", "emotion": "offended", "isHighlighted": true},
+        {"characterId": "banana", "position": "Right", "emotion": "laughing", "isHighlighted": true}
+      ],
+      "speakerId": "strawberry",
+      "speakerEmotion": "offended",
+      "dialogueText": "BRAD! That was ONE time! And it was about the SHOW, not boys! 😤",
+      "nextNodeId": "meet_gigi"
+    },
+    {
+      "nodeId": "meet_gigi",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [],
+      "speakerId": "",
+      "dialogueText": "As the tour continues, you arrive at the firepit. The sun is starting to set, casting a golden glow over everything...",
+      "nextNodeId": "meet_gigi_2"
+    },
+    {
+      "nodeId": "meet_gigi_2",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "mysterious", "isHighlighted": true}
+      ],
+      "speakerId": "",
+      "dialogueText": "You notice someone sitting alone by the fire, watching you with intense eyes...",
+      "nextNodeId": "gigi_intro_1"
+    },
+    {
+      "nodeId": "gigi_intro_1",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "intrigued", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "intrigued",
+      "dialogueText": "So. You're the new one. I've been watching you since you arrived.",
+      "nextNodeId": "gigi_intro_2"
+    },
+    {
+      "nodeId": "gigi_intro_2",
       "nodeType": "Dialogue",
       "backgroundId": "villa_firepit",
       "characters": [
@@ -172,21 +857,139 @@
       ],
       "speakerId": "grape",
       "speakerEmotion": "mysterious",
-      "dialogueText": "I've been watching you since you arrived. I'm Gigi. Gigi Grape. And I think you might be... interesting. 🍇",
+      "dialogueText": "I'm Gigi. Gigi Grape. 🍇 And unlike the others, I don't need to fight for attention. I just... observe.",
+      "nextNodeId": "gigi_intro_3"
+    },
+    {
+      "nodeId": "gigi_intro_3",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "knowing", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "knowing",
+      "dialogueText": "You've already made quite the impression. Stella's practically in love, and Brad... well, Brad sees competition.",
+      "nextNodeId": "gigi_intro_4"
+    },
+    {
+      "nodeId": "gigi_intro_4",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "cryptic", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "cryptic",
+      "dialogueText": "But I see something else. Something... interesting. 🍇 We should talk more. Privately.",
+      "nextNodeId": "gigi_choice"
+    },
+    {
+      "nodeId": "gigi_choice",
+      "nodeType": "Choice",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "waiting", "isHighlighted": true}
+      ],
+      "dialogueText": "Gigi's energy is completely different from the others. What do you say?",
+      "choices": [
+        {
+          "choiceText": "\"You're pretty mysterious, aren't you?\" 🤔",
+          "nextNodeId": "gigi_mysterious",
+          "relationshipEffects": [
+            {"characterId": "grape", "affectionChange": 10}
+          ]
+        },
+        {
+          "choiceText": "\"What did you mean about seeing something?\"",
+          "nextNodeId": "gigi_explains",
+          "relationshipEffects": [
+            {"characterId": "grape", "affectionChange": 8}
+          ]
+        },
+        {
+          "choiceText": "\"You've been watching me? That's kind of creepy...\"",
+          "nextNodeId": "gigi_offended",
+          "relationshipEffects": [
+            {"characterId": "grape", "affectionChange": -10}
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "gigi_mysterious",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "smirking", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "smirking",
+      "dialogueText": "Mysterious? I prefer... selective. Not everyone deserves to know everything about me. But you might earn it.",
+      "nextNodeId": "confessional_1"
+    },
+    {
+      "nodeId": "gigi_explains",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "thoughtful", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "thoughtful",
+      "dialogueText": "Most people come here performing. Playing a role. But you... you seem like you might actually be real. That's rare in this place.",
+      "nextNodeId": "confessional_1"
+    },
+    {
+      "nodeId": "gigi_offended",
+      "nodeType": "Dialogue",
+      "backgroundId": "villa_firepit",
+      "characters": [
+        {"characterId": "grape", "position": "Center", "emotion": "cold", "isHighlighted": true}
+      ],
+      "speakerId": "grape",
+      "speakerEmotion": "cold",
+      "dialogueText": "Creepy. Interesting choice of words. I was trying to give you a compliment. But fine. We can be strangers.",
       "nextNodeId": "confessional_1"
     },
     {
       "nodeId": "confessional_1",
       "nodeType": "Confessional",
       "backgroundId": "confessional_booth",
-      "dialogueText": "🎬 CONFESSIONAL: So there's definitely some tension in the villa already. Stella seems sweet, Brad's clearly into himself, and Gigi... there's something about her I can't figure out. This is going to be wild.",
+      "characters": [],
+      "dialogueText": "🎬 CONFESSIONAL: Okay, deep breath. First day in the villa and I've already met three very different people.",
+      "nextNodeId": "confessional_2"
+    },
+    {
+      "nodeId": "confessional_2",
+      "nodeType": "Confessional",
+      "backgroundId": "confessional_booth",
+      "characters": [],
+      "dialogueText": "Stella is sweet but maybe a little insecure? Brad acts confident but I saw something real underneath. And Gigi... I honestly can't figure her out.",
+      "nextNodeId": "confessional_3"
+    },
+    {
+      "nodeId": "confessional_3",
+      "nodeType": "Confessional",
+      "backgroundId": "confessional_booth",
+      "characters": [],
+      "dialogueText": "The first coupling is coming up. I need to make connections fast. But I also need to be careful - everyone here has their own agenda.",
+      "nextNodeId": "confessional_4"
+    },
+    {
+      "nodeId": "confessional_4",
+      "nodeType": "Confessional",
+      "backgroundId": "confessional_booth",
+      "characters": [],
+      "dialogueText": "One thing's for sure - this summer is going to be WILD. I just hope I'm ready for it... 😳",
       "nextNodeId": "ep1_end"
     },
     {
       "nodeId": "ep1_end",
       "nodeType": "EndEpisode",
       "backgroundId": "villa_night",
-      "dialogueText": "🌙 END OF EPISODE 1\n\nNext time on Fruit Love Island: The first coupling ceremony! Who will you choose to partner with? And what secrets are the other fruits hiding?\n\n➡️ Continue to Episode 2"
+      "characters": [],
+      "dialogueText": "🌙 END OF EPISODE 1\n\nNext time on Fruit Love Island: New arrivals shake things up! The first coupling ceremony approaches! And one islander has a SECRET that could change everything...\n\n➡️ Continue to Episode 2"
     }
   ]
 }
